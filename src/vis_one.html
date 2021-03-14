@@ -1,0 +1,134 @@
+<head xmlns="http://www.w3.org/1999/html">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Question 1</title>
+</head>
+
+<body style="background-color: #121212;padding-left: 10%;color: #ffffff; font-family:verdana">
+<div id="my_info">
+    <b>Name: </b> Jack Geraghty  </br>
+    <b>Student Number: </b> 16384181 </br>
+    <b>Email: </b> jack.geraghty@ucdconnect.ie </br>
+    <b>Dataset: </b> Spotify</br>
+</div>
+<br/><br/><br/>
+<div id="vis" style=" width: 90%;height: 65%"></div>
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/>
+
+
+<div id="answer" style="background-color: #121212;width: 90%">
+    <u><b>Question: </b></u>
+    <p>How have the features that make up the music we listen to changed over the years?</p>
+    <u><b>Description: </b></u>
+    <p>The line chart above shows how each of the features, "acousticness", "danceability", "energy", "liveness" and
+        "valence" have changed over the past few decades.
+        These features are all given a score between 0.0 and 1.0. For example, a danceability score of 0.9 indicates that
+        the song is very suitable for dancing.
+        <br/><br/>
+        Hovering the cursor over any of the lines will highlight that line and grey out the others to enable the ability to
+        focus in on any particular feature. Hovering over a data point in any of the lines will show its value at that point.
+    </p>
+    <u><b>Insight: </b></u>
+    <p>There are several interesting trends which have emerged in the musical features given over the past few decades : </p>
+    <ol>
+        <li>"Acousticness" had its peak back in the 1960s / 1970s and has been </li>
+    </ol>
+    <u><b>Design Considerations: </b></u>
+    <p>Table, Stacked Area chart</p>
+    <u><b>Data Filtering/Aggregation/Transforms: </b></u>
+    <p>Data from before the year 1966 has been filtered out. Initial versions of this chart included them but the lines
+    were quite erratic. Upon inspecting the dataset and the number of samples available per year I noticed that for the
+    years before 1966 there was less than 10 songs. This led to both the mean and median being heavily distorted for those years.
+    <br/><br/>
+        I did some pre-processing in Python (source code and resulting csv are included in submission). This was done so
+        as to convert the features, which were given individual columns into a nominal data type which was stored in a
+        "Feature" column. This enabled a simplified version of the dataset to be exported as a csv file. The structure
+        of this new csv file is, "Year", "Feature", "Median", "Mean". The year column was extracted from the
+        "track_album_release_date" column, the year component of the date was extracted. This was done to group the data
+        by year. Each year has five rows, corresponding to the five features used. "Instrumentalness" was omitted from
+        this chart as upon inspection of the dataset most values for "instrumentalness" resulted in a median of 0.0000 or a
+        very low mean value(which was distorted by outliers in the dataset). Calculating the mean and median was also
+        trivial to do at this point in python and also meant that no further aggregations were necessary.
+    </p>
+</div>
+
+<script type="text/javascript">
+    window.addEventListener("resize", visualize);
+    visualize();
+
+    function visualize() {
+        const data = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+            "data": {"url": "../data/years.csv", "format": {"type": "csv"}},
+            "width": "container",
+            "height": "container",
+            "title": {
+                "fontSize": 20,
+                "text": "Trends in Musical Features since the 1960s"
+            },
+            "transform": [{
+                "filter": "datum.year > 1965"
+            }],
+            "encoding": {
+                "x": {"field": "year", "type": "quantitative", "title": "Year"},
+                "y": {"field": "median", "type": "quantitative", "title": "Median Feature Value"},
+                "tooltip": {"field": "median", "title": "Median", "type": "quantitative"},
+                "color": {
+                    "condition": {
+                        "param": "hover",
+                        "field": "feature",
+                        "type": "nominal",
+                        "scale": {"scheme": "paired"},
+                        "legend": {
+                            "title": "Features",
+                            "padding": 5,
+                            "strokeColor": "#121212",
+                            "labelFontSize": 15,
+                            "titleFontSize": 18
+                        }
+                    },
+                    "value": "grey"
+                },
+                "opacity": {
+                    "condition": {
+                        "param": "hover",
+                        "value": 1
+                    },
+                    "value": 0.2
+                }
+            },
+            "layer": [
+                {
+                    "params": [{
+                        "name": "hover",
+                        "select": {
+                            "type": "point",
+                            "fields": ["feature"],
+                            "on": "mouseover"
+                        }
+                    }],
+                    "mark": {
+                        "type": "line",
+                        "point": true, "strokeWidth": 8, "stroke": "transparent"
+                    }
+                }, {
+                    "mark": "line"
+                }, {
+                    "encoding": {
+                        "x": {"aggregate": "max", "field": "year", "scale": {"domain": [1965, 2022]}},
+                        "y": {"aggregate": {"argmax": "year"}, "field": "median"},
+                    },
+                    "layer": [{
+                        "mark": {"type": "circle"}
+                    }
+                    ]
+                }],
+            "config": {"view": {"stroke": null}}
+        };
+        vegaEmbed("#vis", data);
+    }
+</script>
+</body>

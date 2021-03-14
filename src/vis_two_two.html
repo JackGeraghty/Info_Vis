@@ -1,0 +1,52 @@
+<head xmlns="http://www.w3.org/1999/html">
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Question 1</title>
+</head>
+
+<body>
+<div id="my_info">
+    <b>Name: </b> Jack Geraghty  </br>
+    <b>Student Number: </b> 16384181 </br>
+    <b>Email: </b> jack.geraghty@ucdconnect.ie </br>
+    <b>Dataset: </b> Spotify</br>
+</div>
+<br/><br/><br/>
+<div id="vis"></div>
+
+<div id="answer">
+    <b>Question: </b>
+    <p>Some question text here?</p>
+    <b>Description: </b>
+    <p>Some description here</p>
+    <b>Insight: </b>
+    <p>Some insights here</p>
+    <b>Design Considerations: </b>
+    <p>Small multiples vs radar chart</p>
+</div>
+
+<script type="text/javascript">
+    const data = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "name": "table",
+                "url": "../data/radar.csv",
+                "format": {
+                    "type": "csv"
+                }
+            },
+
+            "width": 400,
+            "height": 300,
+            "mark": "bar",
+            "encoding": {
+                "facet": {"field": "genre", "title" : "Feature Breakdown per Genre","type": "ordinal", "columns": 3, "spacing":30},
+                "x": {"field": "value", "title": "Feature Value(Max Value = 1)","type": "quantitative"},
+                "y": {"field": "feature", "title" : "Musical Feature","type": "nominal"}
+            },
+        }
+    ;
+    vegaEmbed("#vis", data);
+</script>
+</body>
