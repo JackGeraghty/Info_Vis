@@ -5,7 +5,7 @@
     <title>Question 1</title>
 </head>
 
-<body>
+<body style="background-color: #121212;padding-left: 10%;color: #ffffff; font-family:verdana">
 <div id="my_info">
     <b>Name: </b> Jack Geraghty  </br>
     <b>Student Number: </b> 16384181 </br>
@@ -13,244 +13,80 @@
     <b>Dataset: </b> Spotify</br>
 </div>
 <br/><br/><br/>
-<div id="vis"></div>
+<div id="vis" style=" width: 90%;height: 65%"></div>
+<br/><br/><br/><br/><br/><br/>
+<br/><br/><br/>
 
-<div id="answer">
-    <b>Question: </b>
-    <p>Some question text here?</p>
-    <b>Description: </b>
-    <p>Some description here</p>
-    <b>Insight: </b>
-    <p>Some insights here</p>
-    <b>Design Considerations: </b>
-    <p>Some design considerations here</p>
+
+<div id="answer" style="background-color: #121212;width: 90%">
+    <u><b>Question: </b></u>
+    <u><b>Description: </b></u>
+    <u><b>Insight: </b></u>
+    <u><b>Design Considerations: </b></u>
+    <u><b>Data Filtering/Aggregation/Transforms: </b></u>
+
 </div>
 
 <script type="text/javascript">
-    const data = {
-        "$schema": "https://vega.github.io/schema/vega/v5.json",
-        "description": "A radar chart example, showing multiple dimensions in a radial layout.",
-        "width": 650,
-        "height": 650,
-        "padding": 40,
-        "autosize": {"type": "none", "contains": "padding"},
 
-        "signals": [
-            {"name": "radius", "update": "width / 2"},
-            {
-                "name": "Genre",
-                "value" : "pop",
-                "bind": {
-                    "input": "select",
-                    "options": [
-                        "pop",
-                        "r&b",
-                        "edm",
-                        "rock",
-                        "latin"
-                    ]
+    window.addEventListener("resize", visualize);
+    visualize();
+
+    function visualize() {
+        let w = Math.floor(window.innerWidth * 0.8);
+        let h = Math.floor(window.innerHeight * 0.75);
+        console.log(w);
+        console.log(h);
+        const data = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "url": "../data/q2.csv",
+                "format": {"type": "csv"}
+            },
+            "width" : 600,
+            "height" : 500,
+            "selection": {
+                "spt": {
+                    "type": "single",
+                    "on": "click",
+                    "fields": ["track_artist"],
+                    "bind": {
+                        "input": "select",
+                        "options": ["Ed Sheeran", "Maroon 5", "Zara Larsson", "The Chainsmokers", "Katy Perry",
+                            "Sam Feldt", "Avicii", "Shawn Mendes", "Ellie Goulding", "Martin Garrix"]
+                    }
                 }
             },
-            {
-                "name": "Second_Genre",
-                "value" : "r&b",
-                "bind": {
-                    "input": "select",
-                    "options": [
-                        "pop",
-                        "r&b",
-                        "edm",
-                        "rock",
-                        "latin"
-                    ]
-                }
-            }
-        ],
+            "transform": [
+                {"filter" : "datum.feature != 'instrumentalness' "},
+                {"filter" :  "datum.track_popularity > 0"}
+            ],
 
-        "data": [
-            {
-                "name": "table",
-                "url" : "../data/radar.csv",
-                "format" : {
-                    "type" : "csv"
+            "mark": {"type": "circle"},
+            "encoding": {
+                "facet": {"field": "feature", "type": "ordinal", "title": "Musical Feature", "columns": 3},
+                "x": {"field": "track_popularity", "type": "quantitative", "title": "Track Popularity",
+                "scale": {"domain": [0, 100]}},
+                "y": {"field": "feature_value", "type": "quantitative", "title": "Median Feature Value",
+                    "scale": {"domain": [0, 1]}},
+                "color": {
+                    "condition": {
+                        "selection": "spt"},
+                    "value": "grey"
                 },
-                "transform" :[{
-                    "type" : "filter",
-                    "expr" : "datum.genre == Genre || datum.genre == Second_Genre"
-                }]
-            },
-            {
-                "name": "keys",
-                "source": "table",
-                "transform": [
-                    {
-                        "type": "aggregate",
-                        "groupby": ["feature"]
-                    }
-                ]
-            }
-        ],
-        "scales": [
-            {
-                "name": "angular",
-                "type": "point",
-                "range": {"signal": "[-PI, PI]"},
-                "padding": 0.5,
-                "domain": {"data": "table", "field": "feature"}
-            },
-            {
-                "name": "radial",
-                "type": "linear",
-                "range": {"signal": "[0, radius]"},
-                "zero": true,
-                "nice": false,
-                "domain": [0, 1],
-                "domainMin": 0
-            },
-            {
-                "name": "color",
-                "type": "ordinal",
-                "domain": {"data": "table", "field": "genre"},
-                "range": {"scheme": "category10"}
-            }
-        ],
+                "opacity": {
+                    "condition": {
+                        "selection": "spt",
+                        "value": 1,
 
-        "encode": {
-            "enter": {
-                "x": {"signal": "radius"},
-                "y": {"signal": "radius"}
+                    },
+                    "value": 0.1
+                }
             }
-        },
 
-        "marks": [
-            {
-                "type": "group",
-                "name": "categories",
-                "zindex": 1,
-                "from": {
-                    "facet": {"data": "table", "name": "facet", "groupby": ["genre"]}
-                },
-                "marks": [
-                    {
-                        "type": "line",
-                        "name": "genre-line",
-                        "from": {"data": "facet"},
-                        "encode": {
-                            "enter": {
-                                "interpolate": {"value": "linear-closed"},
-                                "x": {"signal": "scale('radial', datum.value) * cos(scale('angular', datum.feature))"},
-                                "y": {"signal": "scale('radial', datum.value) * sin(scale('angular', datum.feature))"},
-                                "stroke": {"scale": "color", "field": "genre"},
-                                "strokeWidth": {"value": 1},
-                                "fill": {"scale": "color", "field": "genre"},
-                                "fillOpacity": {"value": 0.1}
-                            }
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "rule",
-                "name": "radial-grid",
-                "from": {"data": "keys"},
-                "zindex": 0,
-                "encode": {
-                    "enter": {
-                        "x": {"value": 0},
-                        "y": {"value": 0},
-                        "x2": {"signal": "radius * cos(scale('angular', datum.feature))"},
-                        "y2": {"signal": "radius * sin(scale('angular', datum.feature))"},
-                        "stroke": {"value": "lightgray"},
-                        "strokeWidth": {"value": 1}
-                    }
-                }
-            },
-            {
-                "type": "text",
-                "name": "feature-label",
-                "from": {"data": "keys"},
-                "zindex": 1,
-                "encode": {
-                    "enter": {
-                        "x": {"signal": "(radius + 5) * cos(scale('angular', datum.feature))"},
-                        "y": {"signal": "(radius + 5) * sin(scale('angular', datum.feature))"},
-                        "text": {"field": "feature"},
-                        "align": [
-                            {
-                                "test": "abs(scale('angular', datum.feature)) > PI / 2",
-                                "value": "right"
-                            },
-                            {
-                                "value": "left"
-                            }
-                        ],
-                        "baseline": [
-                            {
-                                "test": "scale('angular', datum.feature) > 0", "value": "top"
-                            },
-                            {
-                                "test": "scale('angular', datum.feature) == 0", "value": "middle"
-                            },
-                            {
-                                "value": "bottom"
-                            }
-                        ],
-                        "fill": {"value": "black"},
-                        "fontWeight": {"value": "bold"}
-                    }
-                }
-            },
-            {
-                "type": "text",
-                "name": "max-label",
-                "from": {"data": "keys"},
-                "zindex": 1,
-                "encode": {
-                    "enter": {
-                        "x": {"signal": "(radius + 5) * cos(scale('angular', datum.feature))"},
-                        "y": {"signal": "(radius + 5) * sin(scale('angular', datum.feature))"},
-                        "text": 1,
-                        "align": [
-                            {
-                                "test": "abs(scale('angular', datum.feature)) > PI / 2",
-                                "value": "right"
-                            },
-                            {
-                                "value": "left"
-                            }
-                        ],
-                        "baseline": [
-                            {
-                                "test": "scale('angular', datum.feature) > 0", "value": "top"
-                            },
-                            {
-                                "test": "scale('angular', datum.feature) == 0", "value": "middle"
-                            },
-                            {
-                                "value": "bottom"
-                            }
-                        ],
-                        "fill": {"value": "black"},
-                        "fontWeight": {"value": "bold"}
-                    }
-                }
-            },
-            {
-                "type": "line",
-                "name": "outer-line",
-                "from": {"data": "radial-grid"},
-                "encode": {
-                    "enter": {
-                        "interpolate": {"value": "linear-closed"},
-                        "x": {"field": "x2"},
-                        "y": {"field": "y2"},
-                        "stroke": {"value": "lightgray"},
-                        "strokeWidth": {"value": 1}
-                    }
-                }
-            }
-        ]
-    };
-    vegaEmbed("#vis", data);
+
+        };
+        vegaEmbed("#vis", data);
+    }
 </script>
 </body>

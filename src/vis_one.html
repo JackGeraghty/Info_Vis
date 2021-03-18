@@ -24,33 +24,112 @@
     <u><b>Description: </b></u>
     <p>The line chart above shows how each of the features, "acousticness", "danceability", "energy", "liveness" and
         "valence" have changed over the past few decades.
-        These features are all given a score between 0.0 and 1.0. For example, a danceability score of 0.9 indicates that
+        These features are all given a score between 0.0 and 1.0. For example, a danceability score of 0.9 indicates
+        that
         the song is very suitable for dancing.
         <br/><br/>
-        Hovering the cursor over any of the lines will highlight that line and grey out the others to enable the ability to
-        focus in on any particular feature. Hovering over a data point in any of the lines will show its value at that point.
+        Hovering the cursor over any of the lines will highlight that line and grey out the others to enable the ability
+        to
+        focus in on any particular feature. Hovering over a data point in any of the lines will show its value at that
+        point.
     </p>
     <u><b>Insight: </b></u>
-    <p>There are several interesting trends which have emerged in the musical features given over the past few decades : </p>
+    <p>There are several interesting trends which have emerged in the musical features given over the past few decades
+        : </p>
     <ol>
-        <li>"Acousticness" had its peak back in the 1960s / 1970s and has been </li>
+        <li>
+            The most interesting and worrying trend in musical features is that of "valence". Valence is the perceived
+            positvity of a track, higher meaning more positive and lower meaning more negative. Valence starts off relatively high,
+            but sees a significant drop between the end of the 1960s and the start of the 1970s. This could be a sample
+            size issue with the dataset or it could be a reflection of some real world events that were happening at the time.
+            Both the cold war and the Vietnam War were close to their peaks in this span of time. Valence then sees an
+            increase then for a couple of decades but it does ultimately start to trend downwards with a sizable drop starting in 2010.
+            Considering that the dataset has a lot more samples for more recent years I wouldn't put this drop down to the data being used.
+            Instead I would suggest that it is the result of significant real world events.
+            2007/2008 marked the start of the Global Recession, with many austerity measures being introduced in the following years,
+            austerity is known to have a significant impact on the mental well-being and happiness of people. This
+            austerity lasted for years and during it and in the years that followed there was many global events, a lot of which were negative.
+            There was several disasters such as the earthquake in Haiti, the tsunami off the coast of Japan which caused
+            the Fukushima nuclear plant disaster and global problems such as climate change took the spotlight. Music
+            and Art tends to reflect real life and this is a more worrying reflection than most.
+        </li>
+        <li>
+            "Danceability" sees steady growth throughout the decades, this is more than likely caused by the emergence
+            of new types of music, such as EDM and Techno, genres which are designed to have people dancing. These
+            genres have only become more popular since they started and took off in the 1980s.
+        </li>
+        <li>
+            "Energy", the perceived measure of intensity and activity fluctuates at different points throughout the decades,
+            this is more than likely due to the changing tastes in music throughout the time period. It sees peaks during the
+            80s, when the likes of The Police, U2 and Van Halen were all producing music, and also during the 2010s, when
+            EDM and Hip-Hop were growing and becoming more popular.
+        </li>
+
+        <li>"Acousticness" had its peak back in the 1960s / 1970s and since the end of the 1970s has been relatively
+            stable up until the 2020. "Acousticness" does see a rise again in the mid 1980s, country music did make a small
+            revival during the 80s with hits from the likes of Dolly Parton and others working in the genre being released.
+        </li>
+        <li>
+            "Liveness" remains stable throughout the decades, while artists have published live versions of their music
+            on Spotify, the trend line matches the data available to the visualization. Upon inspection of the data set,
+            I noticed only one entry had any indication of it being a live version, live versions often have live in the title.
+            This stable value for "liveness" matches the entries in the dataset, which is a small subset, less than 32,00 after filtering, of the full music
+            catalogue available on Spotify, which is approximately 70 million songs, <a href="https://newsroom.spotify.com/company-info/#:~:text=Discover%2C%20manage%20and%20share%20over,and%20ad%2Dfree%20listening%20experience.">Source</a>.
+        </li>
     </ol>
     <u><b>Design Considerations: </b></u>
-    <p>Table, Stacked Area chart</p>
+    <p>
+        I used a multi-series line chart for the final iteration of this chart as I thought it would be the best way of
+        showing how the features have changed over time. A small multiples variation of this chart could have also been
+        used to show this for the individual features. By having the features displayed all on the same chart is is easy
+        to loosely compare the different features. This would also be possible in the small multiples variation but due
+        the number of variables being presented and that they're the purpose of the question being asked isn't to necessarily compare the
+        features against each other but how they trend over time, I elected to use the single multi-series chart.
+        To counter-act not being able to see a specific chart on it's own I added the ability to highlight a specific
+        line if the user wants to by hovering over it.
+
+        <br/><br/>
+        Another possible visualization could have been to use a highlight table or a version of a stacked area chart.
+        The highlight table is a very simplistic method but can become very cramped and difficult to spot trends over time.
+        The stacked area chart could be a way of showing what the composition of each year was in terms of the five features,
+        with the area of the chart showing the total score out of 5.0 and the individual colours showing how much
+        each feature contributed to the total. I think this method has some benefits but ultimately they are trumped by
+        the simplistic yet powerful nature of a line chart.
+
+        <br/><br/>
+        The chart uses the statistical median of the feature values, this was selected as it is a better representation of
+        the data. The mean is prone to outliers distorting the average value. The median doesn't have such an issue.
+
+        <br/><br/>
+        Each point in the lines can be hovered over to reveal their exact value. While the exact value isn't necessary
+        to show the trend over time I thought it would be a useful addition should someone want the exact value for a given year.
+        It is also possible to focus on a specific line by hovering over it. Again the purpose of the graph is to understand
+        trends over time and is less focused on the exact values of each of the features.
+    </p>
     <u><b>Data Filtering/Aggregation/Transforms: </b></u>
     <p>Data from before the year 1966 has been filtered out. Initial versions of this chart included them but the lines
-    were quite erratic. Upon inspecting the dataset and the number of samples available per year I noticed that for the
-    years before 1966 there was less than 10 songs. This led to both the mean and median being heavily distorted for those years.
-    <br/><br/>
-        I did some pre-processing in Python (source code and resulting csv are included in submission). This was done so
-        as to convert the features, which were given individual columns into a nominal data type which was stored in a
-        "Feature" column. This enabled a simplified version of the dataset to be exported as a csv file. The structure
-        of this new csv file is, "Year", "Feature", "Median", "Mean". The year column was extracted from the
-        "track_album_release_date" column, the year component of the date was extracted. This was done to group the data
-        by year. Each year has five rows, corresponding to the five features used. "Instrumentalness" was omitted from
-        this chart as upon inspection of the dataset most values for "instrumentalness" resulted in a median of 0.0000 or a
-        very low mean value(which was distorted by outliers in the dataset). Calculating the mean and median was also
-        trivial to do at this point in python and also meant that no further aggregations were necessary.
+        were quite erratic. Upon inspecting the dataset and the number of samples available per year I noticed that for
+        the years before 1966 there was less than 10 songs. This led to both the mean and median being heavily distorted for
+        those years.
+        <br/><br/>
+        Rows which contain NaN values or Infinite values were removed to avoid any issues that they might have caused.
+        No other filtering was needed for this chart.
+        <br/><br/>
+        The CSV file used for this chart is a modified subset of the original data. The year was extracted from the
+        "track_album_release_date" field, this was to simplify grouping. Then each column for the musical features,
+        (excl. Instrumentalness, as after inspecting the data for it, it was deemed as incomplete / inaccurate in the
+        context of the dataset, median was approx. 0.0 for almost every single year), the median and mean was calculated
+        resulting in the final structure of the new CSV as [Year, Feature, Median, Mean]. The new CSV is available on my
+        <a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a> for this assignment, under data/question1.csv.
+        <br/><br/>
+        One reason for doing data pre-processing in python was due to a current bug with Vega-Lite. To achieve the desired
+        multi-series chart, there was two main options, using repeat layers, which worked pretty well for the original
+        structure of the data and the second option which uses the new Feature column to determine when a new line should
+        be created. I opted to use the second option as it meant I could also incorporate the interactive hovering and
+        highlighting of lines. This wasn't possible with the repeat option due to a bug which also duplicates hover
+        parameters across layers resulting in a duplicate signal error.
+        This <a href="https://github.com/vega/vega-lite/issues/6890">bug</a> is still being fixed and was last updated
+        without a work around on the 8th Jan. 2021.
     </p>
 </div>
 
@@ -62,26 +141,37 @@
         const data = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-            "data": {"url": "../data/years.csv", "format": {"type": "csv"}},
+            "data": {
+                "url": "../data/q1.csv",
+                "format": {"type": "csv"}
+            },
             "width": "container",
             "height": "container",
             "title": {
                 "fontSize": 20,
                 "text": "Trends in Musical Features since the 1960s"
             },
-            "transform": [{
-                "filter": "datum.year > 1965"
-            }],
+            "transform": [
+                {
+                    "filter": {"timeUnit": "year", "field": "track_album_release_year", "range": [1965, 2025] }
+                },
+                {
+                    "filter": "datum.feature != 'instrumentalness'"
+                }
+            ],
             "encoding": {
-                "x": {"field": "year", "type": "quantitative", "title": "Year"},
-                "y": {"field": "median", "type": "quantitative", "title": "Median Feature Value"},
-                "tooltip": {"field": "median", "title": "Median", "type": "quantitative"},
+                "x": {"timeunit" : "year", "type" : "temporal", "field" : "track_album_release_year", "scale" : {"type" : "time",
+                        "domain": [{"year": 1960}, {"year": 2025}]}, "axis" :{"tickCount" : {"interval":"year", "step":5}}},
+                "y": {"field": "feature_median", "type": "quantitative", "title": "Median Feature Value"},
+                "tooltip" : {
+                    "field" : "feature_median", "type" : "quantitative"
+                },
                 "color": {
                     "condition": {
                         "param": "hover",
                         "field": "feature",
                         "type": "nominal",
-                        "scale": {"scheme": "paired"},
+                        "scale": {"scheme": "accent"},
                         "legend": {
                             "title": "Features",
                             "padding": 5,
@@ -116,15 +206,6 @@
                     }
                 }, {
                     "mark": "line"
-                }, {
-                    "encoding": {
-                        "x": {"aggregate": "max", "field": "year", "scale": {"domain": [1965, 2022]}},
-                        "y": {"aggregate": {"argmax": "year"}, "field": "median"},
-                    },
-                    "layer": [{
-                        "mark": {"type": "circle"}
-                    }
-                    ]
                 }],
             "config": {"view": {"stroke": null}}
         };
