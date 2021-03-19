@@ -14,11 +14,10 @@
 </div>
 <br/><br/><br/>
 <div id="vis" style=" width: 90%;height: 65%"></div>
-<br/><br/><br/><br/><br/><br/>
-<br/><br/><br/>
-
 
 <div id="answer" style="background-color: #121212;width: 90%">
+    <hr style="color: white">
+
     <u><b>Question: </b></u>
     <p>How have the features that make up the music we listen to changed over the years?</p>
     <u><b>Description: </b></u>
@@ -27,12 +26,16 @@
         These features are all given a score between 0.0 and 1.0. For example, a danceability score of 0.9 indicates
         that
         the song is very suitable for dancing.
-        <br/><br/>
+    </p>
+    <p>
         Hovering the cursor over any of the lines will highlight that line and grey out the others to enable the ability
         to
         focus in on any particular feature. Hovering over a data point in any of the lines will show its value at that
         point.
     </p>
+
+    <hr style="color: white">
+
     <u><b>Insight: </b></u>
     <p>There are several interesting trends which have emerged in the musical features given over the past few decades
         : </p>
@@ -77,6 +80,9 @@
             catalogue available on Spotify, which is approximately 70 million songs, <a href="https://newsroom.spotify.com/company-info/#:~:text=Discover%2C%20manage%20and%20share%20over,and%20ad%2Dfree%20listening%20experience.">Source</a>.
         </li>
     </ol>
+
+    <hr style="color: white">
+
     <u><b>Design Considerations: </b></u>
     <p>
         I used a multi-series line chart for the final iteration of this chart as I thought it would be the best way of
@@ -87,41 +93,48 @@
         features against each other but how they trend over time, I elected to use the single multi-series chart.
         To counter-act not being able to see a specific chart on it's own I added the ability to highlight a specific
         line if the user wants to by hovering over it.
-
-        <br/><br/>
+    </p>
+    <p>
         Another possible visualization could have been to use a highlight table or a version of a stacked area chart.
         The highlight table is a very simplistic method but can become very cramped and difficult to spot trends over time.
         The stacked area chart could be a way of showing what the composition of each year was in terms of the five features,
         with the area of the chart showing the total score out of 5.0 and the individual colours showing how much
         each feature contributed to the total. I think this method has some benefits but ultimately they are trumped by
         the simplistic yet powerful nature of a line chart.
-
-        <br/><br/>
+    </p>
+    <p>
         The chart uses the statistical median of the feature values, this was selected as it is a better representation of
         the data. The mean is prone to outliers distorting the average value. The median doesn't have such an issue.
-
-        <br/><br/>
+    </p>
+    <p>
         Each point in the lines can be hovered over to reveal their exact value. While the exact value isn't necessary
         to show the trend over time I thought it would be a useful addition should someone want the exact value for a given year.
         It is also possible to focus on a specific line by hovering over it. Again the purpose of the graph is to understand
         trends over time and is less focused on the exact values of each of the features.
     </p>
+
+    <hr style="color: white">
+
     <u><b>Data Filtering/Aggregation/Transforms: </b></u>
-    <p>Data from before the year 1966 has been filtered out. Initial versions of this chart included them but the lines
+    <p>
+        Data from before the year 1966 has been filtered out. Initial versions of this chart included them but the lines
         were quite erratic. Upon inspecting the dataset and the number of samples available per year I noticed that for
         the years before 1966 there was less than 10 songs. This led to both the mean and median being heavily distorted for
         those years.
-        <br/><br/>
+    </p>
+    <p>
         Rows which contain NaN values or Infinite values were removed to avoid any issues that they might have caused.
         No other filtering was needed for this chart.
-        <br/><br/>
+    </p>
+    <p>
         The CSV file used for this chart is a modified subset of the original data. The year was extracted from the
         "track_album_release_date" field, this was to simplify grouping. Then each column for the musical features,
         (excl. Instrumentalness, as after inspecting the data for it, it was deemed as incomplete / inaccurate in the
         context of the dataset, median was approx. 0.0 for almost every single year), the median and mean was calculated
         resulting in the final structure of the new CSV as [Year, Feature, Median, Mean]. The new CSV is available on my
         <a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a> for this assignment, under data/question1.csv.
-        <br/><br/>
+    </p>
+    <p>
         One reason for doing data pre-processing in python was due to a current bug with Vega-Lite. To achieve the desired
         multi-series chart, there was two main options, using repeat layers, which worked pretty well for the original
         structure of the data and the second option which uses the new Feature column to determine when a new line should
@@ -131,6 +144,15 @@
         This <a href="https://github.com/vega/vega-lite/issues/6890">bug</a> is still being fixed and was last updated
         without a work around on the 8th Jan. 2021.
     </p>
+
+    <hr style="color: white">
+    <hr style="color: white">
+
+    <p>
+        All work is my own, Jack Geraghty - 16384181
+    </p>
+
+    <hr style="color: white">
 </div>
 
 <script type="text/javascript">

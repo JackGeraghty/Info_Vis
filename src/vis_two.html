@@ -7,47 +7,57 @@
 
 <body style="background-color: #121212;padding-left: 10%;color: #ffffff; font-family:verdana">
 <div id="my_info">
-    <b>Name: </b> Jack Geraghty  <br/>
+    <b>Name: </b> Jack Geraghty <br/>
     <b>Student Number: </b> 16384181 <br/>
     <b>Email: </b> jack.geraghty@ucdconnect.ie <br/>
     <b>Dataset: </b> Spotify Dataset<br/>
 </div>
-<br/><br/><br/>
-<div id="vis" style=" width: 90%;height: 65%"></div>
-<br/><br/><br/>
+<hr style="color: white">
 
+<div id="vis" style=" width: 90%;height: 65%"></div>
+<br/><br/><br/><br/>
 
 <div id="answer" style="background-color: #121212;width: 90%">
+    <hr style="color: white">
+
     <u><b>Question: </b></u>
     <p>
-        What musical features are used to make the most popular music?
+        What musical features are used to make the most popular music and how are those features used by the most
+        popular musicians?
     </p>
+
+    <hr style="color: white">
+
     <u><b>Description: </b></u>
     <p>
         The chart above shows each of the musical features present in the dataset(excl. "Instrumentalness", more on this
         in the Data Filtering section) plotted against the corresponding track popularity value for the top 10 most
-        popular artists. The aim of this chart is investigate how the each of the musical features relate to the most
-        tracks of the most popular artists.
+        popular artists. There are two aims to the chart, one is to be able to identify what musical features the most popular musicians
+        tracks are composed off and two what are the general trends of these features across the most popular musicians?
     </p>
     <p>
-        The chart shows all the data points for the top 10 most popular artists, this can be refined to select individual
-        artists using the artist selection menu just below the graph.
-    </p>
-    <u><b>Insight: </b></u>
-    <p>
-        Acoustiness has a significant cluster of points below 0.1 which also lines up with the artists present, the
-        points above this line can be accounted for by artists such as Ed Sheeran whose music is created using a lot of
-        acoustic guitar. From the previous chart the median value for acousticness has been between 0.03 and 0.125, with
-        an upward trend in the past five years. This matches the acousticness chart for this question as most of the points
-        are clustered below 0.1 and the artists present have mostly produced music in the past decade.
-    </p>
-    <p>
-        From the base chart with all data points visible it's possible to identify some defining characteristics of the
-        most popular artists present in the dataset, irrespective of individual track popularity. The most tracks produced by
-        the most popular artists, are in general quite danceable and are energetic in nature. Once again, this lines up
-        with the general trend that music is becoming more danceable and energetic that was seen in the previous chart.
+        The chart shows all the data points for the top 10 most popular artists, this can be refined to select
+        individual artists using the artist selection menu just below the graph. The selection can then be reset by
+        clicking anywhere on the chart.
     </p>
 
+    <hr style="color: white">
+
+    <u><b>Insight: </b></u>
+    <p>
+        Overall, there doesn't appear to be any correlation between popularity and any of the musical features. Most of
+        charts have their data points in a relatively straight, horizontal line, which would indicate a correlation
+        coefficient
+        that is close to zero.
+    </p>
+    <p>
+        Acoustiness has a significant cluster of points below 0.1 which lines up with the artists present, the
+        points above this line can be accounted for by artists such as Ed Sheeran whose music is created using a lot of
+        acoustic guitar. From the previous chart the median value for acousticness has been between 0.03 and 0.125, with
+        an upward trend in the past five years. This matches the acousticness chart for this question as most of the
+        points
+        are clustered below 0.1 and the artists present have mostly produced music in the past decade.
+    </p>
     <p>
         A similar pattern can be seen in the liveness feature. Most of the points are clustered below 0.2. This again
         reflects the genres produced by the top 10 artists, three of the top 10 artists are DJs (Sam Feldt, Avicii and
@@ -58,31 +68,68 @@
         of the top 10 artists in this dataset, they are mostly Pop and EDM.
     </p>
     <p>
-        The valence chart shows that the perceived positivity of the top artists music is quite diverse with a fairly equal
-        spread of points above and below the 0.5 mark. While roughly equal there is more points below 0.5, this shows that
-        overall the music produced by these artists is more negative. This lines up with the overall trend in valence since
+        The valence chart shows that the perceived positivity of the top artists music is quite diverse with a fairly
+        equal
+        spread of points above and below the 0.5 mark. While roughly equal there is more points below 0.5, this shows
+        that
+        overall the music produced by these artists is more negative. This lines up with the overall trend in valence
+        since
         the 1960s (as seen in the previous chart) which showed that music was becoming more negative in general over
-        the past decade and the fact that the music produced by the top 10 artists has been released in the past 10 years.
+        the past decade and the fact that the music produced by the top 10 artists has been released in the past 10
+        years.
     </p>
     <p>
         Using the ability to select individual artists it is possible to get a more in-depth look at what makes up the
-        music of the most popular artists. I won't discuss all 10 as it would take up a lot of space and isn't necessary,
-        instead I will pick a subset of them which represents several different genres.
+        music of the most popular artists. I won't discuss all 10 as it would take up a lot of space and isn't
+        necessary,
+        instead I will pick a subset of them to get a picture of what makes up their music.
     </p>
     <p>
         <b><u>Ed Sheeran</u></b> is a singer-songwriter whose predominant genre is Pop, and it is possible to say that
         his earlier work falls more so in the Acoustic Pop genre. When the chart is filtered to show the points relating
         to his tracks a clear picture is painted in terms of what musical features make up his music. He has a number of
-        tracks which score high for acousticness, especially compared to the other artists.
+        tracks which score high for acousticness, especially compared to the other artists. His most popular tracks
+        score
+        high for danceability, energy and valence.
     </p>
     <p>
-        Conclusion:
+        <b><u>Katy Perry</u></b> is another pop musician but differs from Ed Sheeran in her use of acoustic instruments,
+        this is seen in the low values of acousticness for her tracks. She maintains a consistent popularity value above
+        50 with only a small number of outliers below this threshold. In general her most popular music is a mix of
+        being slightly positive and slightly negative, while being very energetic.
     </p>
+    <p>
+        <b><u>Martin Garrix</u></b> is a DJ whose predominant genre would fall into EDM. His most popular music is
+        moderately
+        negative with his most popular tracks having a valence value of less than 0.5. While they are negative, the most
+        popular tracks are energetic and danceable. This is no suprise since EDM in general is scores high for energy
+        and
+        danceability.
+    </p>
+    <p>
+        A lot of information can be drawn from this chart and it compliments the previous chart depicting the trends in
+        the musical features over the decades. The most popular artists score high for both energy and danceability,
+        both
+        of these have seen upward trends in recent years. Their music is also quite varied in terms of it valence
+        (perceived positivity), but it does lean more on the negative side.
+    </p>
+    <p>
+        Then when we look into individual artists, it's no surprise that, in general, their more popular tracks have
+        higher
+        scores for energy and danceability.
+    </p>
+    <hr style="color: white">
     <u><b>Design Considerations: </b></u>
+    <p>
+        The target audience for this chart is the same as it is for all three visualizations, and that is those from who
+        are more interested in music than your average person and also those with some background in data analysis such
+        that they already have even a mild understanding of interpreting charts and concepts such as correlations etc.
+    </p>
     <p>
         My original thoughts for this question was to investigate how each of the features made up each genre. I created
         a radar plot for this, which showed the composition for each genre. However, the dataset is quite limited in the
-        amount of genres present, there is only six available when in reality there are many more (to name a few well known ones,
+        amount of genres present, there is only six available when in reality there are many more (to name a few well
+        known ones,
         Classical, Hip-Hop, Indie etc.). The genres do expand slightly when you look at the "playlist_subgenre" field
         but these are mostly compositions of the main genres, e.g. edm & pop. It was because of this I felt the need to
         add more dimensions to this questions, track popularity and then to refine this, the top 10 artists.
@@ -97,43 +144,72 @@
         the final small multiples scatter plot used. Heatmaps are useful for identifying dense clusters of data points.
         However, that wasn't the aim of this chart. Another drawback of using a heatmap for this chart was that due to
         lack of data, i.e. each artist only had a relatively small amount of tracks and they had varying feature values,
-        a heatmap for an individual artist didn't show a lot of information and was quite sparse depending on the artist.
+        a heatmap for an individual artist didn't show a lot of information and was quite sparse depending on the
+        artist. Due to this I decided that more information could be retrieved from that chart by using points rather
+        than binned rectangles.
     </p>
     <p>
-        A small alternative to the final chart was to give each of the different artists a unique color. This would allow
+        A small alternative to the final chart was to give each of the different artists a unique color. This would
+        allow
         for easier identification of the artists when all points are displayed at once. There was some drawback with
-        this, since there was data for 10 artists there would have been 10 colours used, this made the chart very chaotic
-        in clusters of data points and more time was spent trying to match up colours to artists that actually looking at
-        the data in the chart. I could have reduced the number of artists to five, I felt this didn't get as much information
-        across and wasn't a good enough tradeoff for having colours represent each artist.
+        this, since there was data for 10 artists there would have been 10 colours used, this made the chart very
+        chaotic
+        in clusters of data points and more time would be spent trying to match up colours to artists that actually
+        looking
+        at
+        the data in the chart. I could have reduced the number of artists to five, I felt this didn't get as much
+        information
+        across and wasn't a good enough tradeoff for having colours represent each artist. A variation on this would
+        have
+        been to use different marks for each artist but this also had the same pitfall as different colours, which was
+        that
+        it becomes very chaotic and the person reading that chart has to spend time matching marks to artists using a
+        legend.
     </p>
     <p>
-        My solution to the previous problem was to include the ability to select individual artists from a selection menu
+        My solution to the previous problem was to include the ability to select individual artists from a selection
+        menu
         and have that grey out all the other artists. I think this worked really well and enables the user to either
         get a broad overview of the musical features that make up the most popular artists and then by selecting an
         individual artists the user can get a more in-depth look at what makes up the music of that artist.
     </p>
     <p>
+        A box plot could also have been used as an alternative to the final scatter plots. This would have worked by binning
+        the data into bins based on popularity(e.g. 0-10, 90-100 etc.). Then each of those bins would have a box and the
+        associated whiskers based on the mean and standard deviation. I decided not to use this as it had similar issues
+        as the heatmap alternative. Since points would have been grouped together the finer details of having all the points
+        would be lost, which I didn't think was appropriate given what I wanted the chart to convey.
+    </p>
+    <p>
         A single scatter plot could have been used with all features present on it, differentiated by colour. This chart
         would contain a very large amount of points and would be very difficult to extract information. A solution would
-        be to use the selection ability I used to the final chart but this would also require removing the ability to choose
-        an artist or add another selection so as to have the ability to select an artist alongside a feature. This seemed
+        be to use the selection ability I used to the final chart but this would also require removing the ability to
+        choose
+        an artist or add another selection so as to have the ability to select an artist alongside a feature. This
+        seemed
         overly complicated and an easier solution was to just use small multiples based on features.
     </p>
     <p>
         After considering the above options I felt the best way forward was to use the small multiples approach with
         individual scatter plots for each of the features. Then using a selection option it was possible to get both a
-        high level overview of the composition of the musical features for the most popular artists and then also be able
+        high level overview of the composition of the musical features for the most popular artists and then also be
+        able
         to get a more refined look at the breakdown per artist.
     </p>
+
+    <hr style="color: white">
+
     <u><b>Data Filtering/Aggregation/Transforms: </b></u>
     <p>
-        This chart required a bit more transforming and filtering compared to the others. A modified version of the dataset
-        was constructed in python and is available on my GitHub for inspection. To get the required data for this chart I
-        first had to filter out both NaN and Infinity values from the dataset. Then when I was working with the dataset I
+        This chart required a bit more transforming and filtering compared to the others. A modified version of the
+        dataset
+        was constructed in python and is available on my GitHub for inspection. To get the required data for this chart
+        I
+        first had to filter out both NaN and Infinity values from the dataset. Then when I was working with the dataset
+        I
         noticed that there was a significant amount of duplicate track entries. These were the same track with the same
         feature values, popularity etc. but differed on the playlist_genre. Several songs, which ended up distorting my
-        original attempts at transforming this dataset, had  entries for every genre in the dataset for a given song. To
+        original attempts at transforming this dataset, had entries for every genre in the dataset for a given song. To
         resolve this I dropped duplicate track_name entries.
     </p>
     <p>
@@ -142,17 +218,34 @@
         create small multiples based on those features.
     </p>
     <p>
-        The final dataset contains the top 10 artists and all of their tracks that are present in the dataset and the popularity,
+        The final dataset contains the top 10 artists and all of their tracks that are present in the dataset and the
+        popularity,
         features and their corresponding values, for each of those tracks.
     </p>
     <p>
-        When using the dataset in Vega-Lite I filtered out the "Instrumentalness" feature. This was done after inspecting the
-        dataset as well as using it for another chart in this assignment. The median value for "instrumentalness" across the
+        When using the dataset in Vega-Lite I filtered out the "Instrumentalness" feature. This was done after
+        inspecting the
+        dataset as well as using it for another chart in this assignment. The median value for "instrumentalness" across
+        the
         dataset is approx. 0.0 except for one year and because of this I felt that it didn't contribute to the chart or
         what it was trying to convey. I think that this is caused by the relatively small sample size of the dataset
         , approx. 32,000 entries, compared to the full Spotify catalogue, which contains approx. 70 million songs.
     </p>
+    <p>
+        I also considered filtering out tracks that had a track_popularity of zero. I thought that it didn't make sense
+        for a track to have a popularity of zero. After some investigating into the dataset I found out that a popularity
+        score of zero means that there just wasn't enough listens on a track for it to give a meaningful score. I included
+        these tracks in the end as they still had their musical features defined and they didn't have any significant
+        impact on identifying correlations between features and popularity.
+    </p>
+    <hr style="color: white">
+    <hr style="color: white">
 
+    <p>
+        All work is my own, Jack Geraghty - 16384181
+    </p>
+
+    <hr style="color: white">
 </div>
 
 <script type="text/javascript">
@@ -197,7 +290,7 @@
                 "facet": {
                     "field": "feature",
                     "type": "ordinal",
-                    "title": "Musical Feature",
+                    "title": "Musical Features vs. Popularity for Top 10 Artists",
                     "columns": 3
                 },
                 "x": {
