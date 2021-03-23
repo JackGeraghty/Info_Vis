@@ -5,7 +5,7 @@
     <title>Question 1</title>
 </head>
 
-<body style="background-color: #121212;padding-left: 10%; font-family:verdana,serif">
+<body style="background-color: #121212;padding-left: 5%; font-family:verdana,serif">
 <div id="my_info" style="color: #ffffff">
     <b><u>Name: </u></b> Jack Geraghty <br/>
     <b><u>Student Number: </u></b> 16384181 <br/>
@@ -17,6 +17,8 @@
 </div>
 <hr style="color: white">
 <div id="vis" style=" width: 90%;height: 65%"></div>
+<br/><br/>
+<br/><br/>
 
 <div id="answer" style="background-color: #121212;width: 90%;color: #ffffff;">
     <label for="option">Use Median: </label>
@@ -104,11 +106,15 @@
 
     <u><b>Design Considerations: </b></u>
     <p>
-        I used a small multiples version of a line chart to present the trend of the music features over time. Small multiples
+        I used a small multiples version of a line chart to present the trend of the music features over time. Small
+        multiples
         are a style that I ended up using a lot in this assignment due to their ability to de-clutter charts that are
-        comparing many variables. Line chart were selected for the final visualization due their ease of understanding when
-        it comes to trends over time. The x-axis is a natural fit for representing time. In general, line charts are simple
-        and easily understandable and are a type of chart that most people are familiar with and are comfortable with. Due
+        comparing many variables. Line chart were selected for the final visualization due their ease of understanding
+        when
+        it comes to trends over time. The x-axis is a natural fit for representing time. In general, line charts are
+        simple
+        and easily understandable and are a type of chart that most people are familiar with and are comfortable with.
+        Due
         to these reasons and the lack of a better alternative I decided on using line charts to convey the information
         required to answer this question.
     </p>
@@ -116,26 +122,30 @@
         Originally I had only used six of the nine features now present and I had originally used a multi-series line
         chart instead of the small multiples chart seen in the final chart. While I thought the multi-series line chart
         was easy to read and understand as I added more features it became more and more cluttered and ultimately the
-        ability to easily identify and follow features over time diminished. More time was spent looking up the legend to
+        ability to easily identify and follow features over time diminished. More time was spent looking up the legend
+        to
         match line colours to features and would be a nightmare for someone with any form of colour blindness.
     </p>
     <p>
         Colour is something that can make a chart look nice, but it can have a negative effect as well, especially when
         there is more than just a handful of variables being plotted. Colour isn't something I've really used in the
         final versions of all the charts in this assignment. The main reason being that the data I'm presenting has a
-        lot of variables and colour would only confuse people or would take them longer to determine each of the features
+        lot of variables and colour would only confuse people or would take them longer to determine each of the
+        features
         being presented.
     </p>
     <p>
         The small multiples style overcomes these issues as each chart present only a single variable and each chart has
-        it's own title to indicate which feature is being used. This in combination of a tooltip detailing the exact value
+        it's own title to indicate which feature is being used. This in combination of a tooltip detailing the exact
+        value
         of a point alongside the feature should enable a clear understanding of what is being presented on each chart.
     </p>
     <p>
-        All of features used have been normalised to be between 0 and 1 (more on this in the next section) and as such
+        All of features used are normalised to be between 0 and 1 (more on this in the next section) and as such
         they all make use of a common y-axis that ranges from 0 to 1. This enables an easy comparison between trends in
         features as it is possible to get a quick estimate of where each line is in respect to the others. It is also
-        easy to spot trends in each of the features using the small multiples approach as each chart isn't impeded by any
+        easy to spot trends in each of the features using the small multiples approach as each chart isn't impeded by
+        any
         of others, an issue I ran into with the all of the feature trends on a single chart.
     </p>
     <p>
@@ -143,13 +153,14 @@
         represented years and the rows the corresponding aggregated feature values for those years. Then it would be
         possible for a colour gradiant to be used to show increases/decreases per cell. There are multiple issues with
         this approach, firstly the years used range from 1965 to 2020, which is 55 years. This would lead to a very long
-        table that would be quite difficult to read, which would only be made worse by the colour gradiant, especially for
+        table that would be quite difficult to read, which would only be made worse by the colour gradiant, especially
+        for
         those with any form of colour blindness.
     </p>
     <p>
         To address the obstacle that is having 55 columns it would be possible to group the years into a number of bins.
-        This would reduce the number of columns but would come at the cost of precision, something which I didn't want to
-        lose for this chart.
+        This would reduce the number of columns but would come at the cost of precision, something which I didn't want
+        to lose for this chart.
     </p>
     <p>
         A stacked area chart was also a contender for presenting this information compared to the multi-series line
@@ -159,7 +170,8 @@
         features to an overall value. This however didn't make sense in terms of the data, tracks aren't represented as
         some score out of nine, and the features are relatively independent of each other. Colour is another issue,
         stacked area charts suffer from the same issues with colour as general lines chart and the issues I've addressed
-        about colour above. Using a stacked area chart I felt would ultimately confuse the reader and take away from what the chart was trying
+        about colour above. Using a stacked area chart I felt would ultimately confuse the reader and take away from
+        what the chart was trying
         to convey, which was trends over time.
     </p>
     <p>
@@ -169,13 +181,15 @@
         y-axis staying the same as the final chart. Histograms are useful as they are easily understood by the majority
         and have use regular intervals which aids in this ease of understanding. A histogram on its own would not be
         sufficient for this question as there are too many variables, so comparing features and spotting trends would be
-        difficult due to a cluttered graph. Small multiples would fix this issue but it also has it's problems. Year data
+        difficult due to a cluttered graph. Small multiples would fix this issue but it also has it's problems. Year
+        data
         would still be be binned at the cost of precision and since histograms take up a lot of area on a chart the
         data/ink ratio wouldn't necessarily be optimal.
     </p>
     <p>
         The final chart I created addresses the short comings of the small multiples histogram, data doesn't have to be
-        binned at the expense of precision and lines use minimal area on a chart. Line charts are easily understood by the
+        binned at the expense of precision and lines use minimal area on a chart. Line charts are easily understood by
+        the
         majority, enable easy comparison of the musical features present in the dataset and make it easy to spot trends
         in the series.
     </p>
@@ -187,33 +201,40 @@
         Data from before the year 1966 has been filtered out. Initial versions of this chart included them but the lines
         were quite erratic. Upon inspecting the dataset and the number of samples available per year I noticed that for
         the years before 1966 there was less than 10 songs. This led to both the mean and median being heavily distorted
-        for
-        those years.
+        for those years.
     </p>
     <p>
-        Rows which contain NaN values or Infinite values were removed to avoid any issues that they might have caused.
-        No other filtering was needed for this chart.
+        Before using the dataset for any visualisations I did some general preprocessing of the dataset. This
+        preprocessing was done through python. After working with dataset for a period I noticed issues with it, so I
+        took this as a general opportunity to sort out the dataset that I would use for the final visualizations.
+        This involved filtering out NaN and Infinity values from the dataset, there wasn't many present but they would
+        cause issues during visualization if they were left in. Then I noticed that there was a significant amount of
+        duplicates entries in the dataset. These were rows which had the same track_name/artist and feature values, but
+        differed on the playlist_genre. There wasn't much that could be done about this. The dataset lacks the actual
+        genre of a given track and instead uses whatever genre the playlist it was placed in is. Luckily, this doesn't
+        effect this visualization and the final visualization as the repeated entries don't distort the mean since they
+        have the exact same values. It does matter though for the second visualization and I will discuss it more in the
+        Data Filtering/Aggregation/Transformations section of that question.
+    </p>
+    <p>
+        Once the preprocessing was done I needed to normalize two of musical features so that they would have values
+        between 0 and 1. These features were loudness and tempo. Loudness refers to the overall loudness of the track
+        and is quite different from all the other features. A value of 0dB in this context refers to the loudness
+        possible
+        value according to spotify and -60dB being the quietest possible sound. Decibels also utilize a logarithmic
+        scale, i.e. -60dB is 60x quieter than 0dB. With this in mind during preprocessing extra steps had to be taken
+        to firstly convert this from logarithmic scale to linear and secondly, to normalize the linear values between
+        0 and 1. The resulting loudness values are within the range 0 and 1 with previous loudness values of 0dB
+        representing 1 and values of -60db representing 0. Tempo was easier to normalize, I used a standard method
+        of normalizing which involves using the minimum and maximum values of tempo in the dataset to normalize between
+        0 and 1.
     </p>
     <p>
         The CSV file used for this chart is a modified subset of the original data. The year was extracted from the
         "track_album_release_date" field, this was to simplify grouping. Then each column for the musical features,
-        (excl. Instrumentalness, as after inspecting the data for it, it was deemed as incomplete / inaccurate in the
-        context of the dataset, median was approx. 0.0 for almost every single year), the median and mean was calculated
-        resulting in the final structure of the new CSV as [Year, Feature, Median, Mean]. The new CSV is available on my
-        <a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a> for this assignment, under
-        data/question1.csv.
-    </p>
-    <p>
-        One reason for doing data pre-processing in python was due to a current bug with Vega-Lite. To achieve the
-        desired
-        multi-series chart, there was two main options, using repeat layers, which worked pretty well for the original
-        structure of the data and the second option which uses the new Feature column to determine when a new line
-        should
-        be created. I opted to use the second option as it meant I could also incorporate the interactive hovering and
-        highlighting of lines. This wasn't possible with the repeat option due to a bug which also duplicates hover
-        parameters across layers resulting in a duplicate signal error.
-        This <a href="https://github.com/vega/vega-lite/issues/6890">bug</a> is still being fixed and was last updated
-        without a work around on the 8th Jan. 2021.
+        the median and mean was calculated resulting in the final structure of the new CSV as [Year, Feature, Median,
+        Mean]. The new CSV is available on my<a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a>
+        for this assignment, under data/question1.csv.
     </p>
 
     <hr style="color: white">
@@ -231,8 +252,8 @@
     visualize();
 
     function visualize() {
-        let w = Math.floor(window.innerWidth * 0.25);
-        let h = Math.floor(window.innerHeight * 0.16);
+        let w = Math.floor(window.innerWidth * 0.275);
+        let h = Math.floor(window.innerHeight * 0.15);
         const averageToUse = document.getElementById("option").checked ? "median" : "mean";
         const capitalizedAvgToUse = averageToUse.charAt(0).toUpperCase() + averageToUse.slice(1);
         const data = {
