@@ -11,17 +11,20 @@
     <b><u>Student Number: </u></b> 16384181 <br/>
     <b><u>Email: </u></b> jack.geraghty@ucdconnect.ie <br/>
     <b><u>Dataset: </u></b> Spotify Dataset<br/>
-    <b><u>Initial Questions</u>:</b> How have the features that make up music changed over time? How do these features make up
+    <b><u>Initial Questions</u>:</b> How have the features that make up music changed over time? How do these features
+    make up
     the music we listen to?
 </div>
-<br/><br/><br/>
+<hr style="color: white">
 <div id="vis" style=" width: 90%;height: 65%"></div>
 
 <div id="answer" style="background-color: #121212;width: 90%;color: #ffffff;">
+    <label for="option">Use Median: </label>
+    <input type="checkbox" id="option" name="avg_option" value="Use Median" onclick="visualize()">
     <hr style="color: white">
 
-    <u><b>Chart Specific Question: </b></u>
-    <p>How has the features that make up the music we listen to changed over the years?</p>
+    <u><b>Question: </b></u>
+    <p>How have the features that make up the music we listen to changed over the years?</p>
     <u><b>Description: </b></u>
     <p>The line chart above shows how each of the features, "acousticness", "danceability", "energy", "liveness" and
         "valence" have changed over the past few decades.
@@ -101,38 +104,80 @@
 
     <u><b>Design Considerations: </b></u>
     <p>
-        I used a multi-series line chart for the final iteration of this chart as I thought it would be the best way of
-        showing how the features have changed over time. A small multiples variation of this chart could have also been
-        used to show this for the individual features. By having the features displayed all on the same chart is is easy
-        to loosely compare the different features. This would also be possible in the small multiples variation but due
-        the number of variables being presented and that they're the purpose of the question being asked isn't to
-        necessarily compare the
-        features against each other but how they trend over time, I elected to use the single multi-series chart.
-        To counter-act not being able to see a specific chart on it's own I added the ability to highlight a specific
-        line if the user wants to by hovering over it.
+        I used a small multiples version of a line chart to present the trend of the music features over time. Small multiples
+        are a style that I ended up using a lot in this assignment due to their ability to de-clutter charts that are
+        comparing many variables. Line chart were selected for the final visualization due their ease of understanding when
+        it comes to trends over time. The x-axis is a natural fit for representing time. In general, line charts are simple
+        and easily understandable and are a type of chart that most people are familiar with and are comfortable with. Due
+        to these reasons and the lack of a better alternative I decided on using line charts to convey the information
+        required to answer this question.
     </p>
     <p>
-        Another possible visualization could have been to use a highlight table or a version of a stacked area chart.
-        The highlight table is a very simplistic method but can become very cramped and difficult to spot trends over
-        time.
-        The stacked area chart could be a way of showing what the composition of each year was in terms of the five
-        features,
-        with the area of the chart showing the total score out of 5.0 and the individual colours showing how much
-        each feature contributed to the total. I think this method has some benefits but ultimately they are trumped by
-        the simplistic yet powerful nature of a line chart.
+        Originally I had only used six of the nine features now present and I had originally used a multi-series line
+        chart instead of the small multiples chart seen in the final chart. While I thought the multi-series line chart
+        was easy to read and understand as I added more features it became more and more cluttered and ultimately the
+        ability to easily identify and follow features over time diminished. More time was spent looking up the legend to
+        match line colours to features and would be a nightmare for someone with any form of colour blindness.
     </p>
     <p>
-        The chart uses the statistical median of the feature values, this was selected as it is a better representation
-        of
-        the data. The mean is prone to outliers distorting the average value. The median doesn't have such an issue.
+        Colour is something that can make a chart look nice, but it can have a negative effect as well, especially when
+        there is more than just a handful of variables being plotted. Colour isn't something I've really used in the
+        final versions of all the charts in this assignment. The main reason being that the data I'm presenting has a
+        lot of variables and colour would only confuse people or would take them longer to determine each of the features
+        being presented.
     </p>
     <p>
-        Each point in the lines can be hovered over to reveal their exact value. While the exact value isn't necessary
-        to show the trend over time I thought it would be a useful addition should someone want the exact value for a
-        given year.
-        It is also possible to focus on a specific line by hovering over it. Again the purpose of the graph is to
-        understand
-        trends over time and is less focused on the exact values of each of the features.
+        The small multiples style overcomes these issues as each chart present only a single variable and each chart has
+        it's own title to indicate which feature is being used. This in combination of a tooltip detailing the exact value
+        of a point alongside the feature should enable a clear understanding of what is being presented on each chart.
+    </p>
+    <p>
+        All of features used have been normalised to be between 0 and 1 (more on this in the next section) and as such
+        they all make use of a common y-axis that ranges from 0 to 1. This enables an easy comparison between trends in
+        features as it is possible to get a quick estimate of where each line is in respect to the others. It is also
+        easy to spot trends in each of the features using the small multiples approach as each chart isn't impeded by any
+        of others, an issue I ran into with the all of the feature trends on a single chart.
+    </p>
+    <p>
+        An alternative chart style that I considered was a variation of a highlight table. The columns would have
+        represented years and the rows the corresponding aggregated feature values for those years. Then it would be
+        possible for a colour gradiant to be used to show increases/decreases per cell. There are multiple issues with
+        this approach, firstly the years used range from 1965 to 2020, which is 55 years. This would lead to a very long
+        table that would be quite difficult to read, which would only be made worse by the colour gradiant, especially for
+        those with any form of colour blindness.
+    </p>
+    <p>
+        To address the obstacle that is having 55 columns it would be possible to group the years into a number of bins.
+        This would reduce the number of columns but would come at the cost of precision, something which I didn't want to
+        lose for this chart.
+    </p>
+    <p>
+        A stacked area chart was also a contender for presenting this information compared to the multi-series line
+        chart. The stacked area chart could be a way of showing what the composition of each year was in terms of the
+        nine features, with the area of the chart showing the total score out of 9.0 and the individual colours showing
+        how much each feature contributed to the total. Stacked area charts are useful for showing the composition of
+        features to an overall value. This however didn't make sense in terms of the data, tracks aren't represented as
+        some score out of nine, and the features are relatively independent of each other. Colour is another issue,
+        stacked area charts suffer from the same issues with colour as general lines chart and the issues I've addressed
+        about colour above. Using a stacked area chart I felt would ultimately confuse the reader and take away from what the chart was trying
+        to convey, which was trends over time.
+    </p>
+    <p>
+        Histograms are another method which could have been used, they are similar to bar charts in that they represent
+        height/length using a quantitative variable. They differ though in the way the represent the other axis. In the
+        context of this chart the histogram would have been constructed using binned year data on the x-axis with the
+        y-axis staying the same as the final chart. Histograms are useful as they are easily understood by the majority
+        and have use regular intervals which aids in this ease of understanding. A histogram on its own would not be
+        sufficient for this question as there are too many variables, so comparing features and spotting trends would be
+        difficult due to a cluttered graph. Small multiples would fix this issue but it also has it's problems. Year data
+        would still be be binned at the cost of precision and since histograms take up a lot of area on a chart the
+        data/ink ratio wouldn't necessarily be optimal.
+    </p>
+    <p>
+        The final chart I created addresses the short comings of the small multiples histogram, data doesn't have to be
+        binned at the expense of precision and lines use minimal area on a chart. Line charts are easily understood by the
+        majority, enable easy comparison of the musical features present in the dataset and make it easy to spot trends
+        in the series.
     </p>
 
     <hr style="color: white">
@@ -186,89 +231,64 @@
     visualize();
 
     function visualize() {
+        let w = Math.floor(window.innerWidth * 0.25);
+        let h = Math.floor(window.innerHeight * 0.16);
+        const averageToUse = document.getElementById("option").checked ? "median" : "mean";
+        const capitalizedAvgToUse = averageToUse.charAt(0).toUpperCase() + averageToUse.slice(1);
         const data = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
+            "width": w,
+            "height": h,
             "data": {
                 "url": "https://raw.githubusercontent.com/JackGeraghty/Info_Vis/master/data/q1.csv",
                 "format": {"type": "csv"}
             },
-            "width": "container",
-            "height": "container",
-            "title": {
-                "fontSize": 20,
-                "text": "Trends in Musical Features since the 1960s"
-            },
+
             "transform": [
                 {
                     "filter": {"timeUnit": "year", "field": "track_album_release_year", "range": [1965, 2025]}
                 },
-                {
-                    "filter": "datum.feature != 'instrumentalness'"
-                }
             ],
+            "mark": {
+                "type": "line",
+                "point": true
+            },
             "encoding": {
+                "facet": {
+                    "field": "feature", "columns": 3, "header": {
+                        "title": `Trends in Musical Features since the 1960s - Using ${capitalizedAvgToUse}`,
+                        "titleFontSize": 20, "labelFontSize": 15
+                    }
+                },
                 "x": {
-                    "timeunit": "year", "type": "temporal", "title": "Track Release Year", "field": "track_album_release_year", "scale": {
+                    "timeunit": "year", "type": "temporal", "field": "track_album_release_year", "scale": {
                         "type": "time",
                         "domain": [{"year": 1960}, {"year": 2025}]
-                    }, "axis": {"tickCount": {"interval": "year", "step": 5}}
+                    },
+                    "title": "Track Release Year",
+                    "axis": {
+                        "tickCount": {"interval": "year", "step": 5}
+                    }
                 },
-                "y": {"field": "median", "type": "quantitative", "title": "Median Feature Value","scale" : {"domain" : [0,1]}, "axis" : {"tickCount":20}},
+                "y": {
+                    "field": averageToUse,
+                    "type": "quantitative",
+                    "title": `${capitalizedAvgToUse} Feature Value`,
+                    "scale": {"domain": [0, 1]},
+                    "axis": {"tickCount": 10}
+                },
                 "tooltip": [
                     {
-                        "field": "track_album_release_year", "type": "temporal", "title" : "Year"
+                        "field": "track_album_release_year", "type": "temporal", "title": "Year"
                     },
                     {
-                        "field": "feature", "type": "nominal", "title" : "Feature"
+                        "field": "feature", "type": "nominal", "title": "Feature"
                     },
                     {
-                        "field": "feature_median", "type": "quantitative", "title" : "Feature Value"
+                        "field": averageToUse, "type": "quantitative", "title": `${capitalizedAvgToUse} Value`
                     }
-
-                ],
-                "color": {
-                    "condition": {
-                        "param": "hover",
-                        "field": "feature",
-                        "type": "nominal",
-                        "scale": {"scheme": "accent"},
-                        "legend": {
-                            "title": "Features",
-                            "padding": 5,
-                            "strokeColor": "#121212",
-                            "labelFontSize": 15,
-                            "titleFontSize": 18
-                        }
-                    },
-                    "value": "grey"
-                },
-                "opacity": {
-                    "condition": {
-                        "param": "hover",
-                        "value": 1
-                    },
-                    "value": 0.2
-                }
-            },
-            "layer": [
-                {
-                    "params": [{
-                        "name": "hover",
-                        "select": {
-                            "type": "point",
-                            "fields": ["feature"],
-                            "on": "mouseover"
-                        }
-                    }],
-                    "mark": {
-                        "type": "line",
-                        "point": true, "strokeWidth": 8, "stroke": "transparent"
-                    }
-                }, {
-                    "mark": "line"
-                }],
-            "config": {"view": {"stroke": null}}
+                ]
+            }
         };
         vegaEmbed("#vis", data);
     }
