@@ -28,7 +28,7 @@
     <hr style="color: white">
     <u><b>Chart Specific Question: </b></u>
     <p>
-        What is the composition of musical features for each of the genres present in the dataset?
+       How do the genres present in the dataset use each of the musical features?
     </p>
 
     <hr style="color: white">
@@ -39,7 +39,9 @@
         either
         mean or median, it is possible to switch between these different methods of aggregation by using the "Use
         Median"
-        checkbox, which is available just beneath the chart. To enable easier comparison of the same features across the
+        checkbox, which is available just beneath the chart.
+        The musical features used in this chart and in the others are represented as a score between 0.0 and 1.0.
+        To enable easier comparison of the same features across the
         genres there is an additional text mark to show the exact value of the bar to the right of each bar. It is also
         possible
         to select a feature and highlight it and the same feature across all genres by clicking a bar. To undo this,
@@ -112,7 +114,7 @@
     </p>
     <p>
         There is more than can be taken from this graph, but I felt that the above covers all of the most interesting
-        comparisons that I was able to make. 
+        comparisons that I was able to make.
     </p>
     <hr style="color: white">
     <u><b>Design Considerations: </b></u>
@@ -256,7 +258,7 @@
             "data": {"url": "https://raw.githubusercontent.com/JackGeraghty/Info_Vis/master/data/q2.csv"},
             "facet": {
                 "field": "playlist_genre", "header": {
-                    "title": `Breakdown of Musical Features per Genre - Using ${capitalizedAvgToUse}`,
+                    "title": `How Genres Make Use of Musical Features - Using ${capitalizedAvgToUse}`,
                     "titleFontSize": 20, "labelFontSize": 15
                 }
             },
@@ -274,7 +276,7 @@
                         "dx": 3
                     },
                     "encoding": {
-                        "text": {"field": "mean", "type": "quantitative"}
+                        "text": {"field": averageToUse, "type": "quantitative"}
                     }
                 }],
                 "encoding": {
