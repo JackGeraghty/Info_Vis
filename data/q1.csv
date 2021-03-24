@@ -1,7 +1,7 @@
 track_album_release_year,feature,median,mean
 2019,tempo,0.5178,0.5116
 2019,danceability,0.693,0.6784
-2019,loudness,0.0998,0.1083
+2019,loudness,0.5022,0.4966
 2019,liveness,0.125,0.1852
 2019,valence,0.481,0.4861
 2019,energy,0.713,0.6932
@@ -10,7 +10,7 @@ track_album_release_year,feature,median,mean
 2019,speechiness,0.0735,0.1169
 2018,tempo,0.5137,0.5037
 2018,danceability,0.693,0.678
-2018,loudness,0.1025,0.1126
+2018,loudness,0.4927,0.4848
 2018,liveness,0.123,0.1776
 2018,valence,0.465,0.4698
 2018,energy,0.697,0.671
@@ -19,7 +19,7 @@ track_album_release_year,feature,median,mean
 2018,speechiness,0.0705,0.1164
 2017,tempo,0.5053,0.5039
 2017,danceability,0.676,0.6594
-2017,loudness,0.1018,0.1098
+2017,loudness,0.4954,0.4922
 2017,liveness,0.123,0.186
 2017,valence,0.434,0.4523
 2017,energy,0.711,0.6825
@@ -28,7 +28,7 @@ track_album_release_year,feature,median,mean
 2017,speechiness,0.0718,0.126
 2016,tempo,0.5013,0.5039
 2016,danceability,0.662,0.6524
-2016,loudness,0.0987,0.1064
+2016,loudness,0.5061,0.5024
 2016,liveness,0.129,0.196
 2016,valence,0.433,0.4514
 2016,energy,0.7235,0.6956
@@ -37,7 +37,7 @@ track_album_release_year,feature,median,mean
 2016,speechiness,0.063,0.1151
 2014,tempo,0.5343,0.516
 2014,danceability,0.636,0.6284
-2014,loudness,0.0902,0.0983
+2014,loudness,0.5369,0.5273
 2014,liveness,0.128,0.1997
 2014,valence,0.426,0.4495
 2014,energy,0.792,0.7563
@@ -46,7 +46,7 @@ track_album_release_year,feature,median,mean
 2014,speechiness,0.0576,0.098
 2012,tempo,0.522,0.5022
 2012,danceability,0.636,0.6345
-2012,loudness,0.0966,0.1024
+2012,loudness,0.5133,0.5109
 2012,liveness,0.129,0.206
 2012,valence,0.5345,0.5317
 2012,energy,0.768,0.7343
@@ -55,7 +55,7 @@ track_album_release_year,feature,median,mean
 2012,speechiness,0.06,0.1092
 2015,tempo,0.5095,0.5045
 2015,danceability,0.66,0.6514
-2015,loudness,0.0975,0.1048
+2015,loudness,0.5104,0.5077
 2015,liveness,0.128,0.1884
 2015,valence,0.4375,0.4557
 2015,energy,0.738,0.7154
@@ -64,7 +64,7 @@ track_album_release_year,feature,median,mean
 2015,speechiness,0.0612,0.1048
 2013,tempo,0.5322,0.5143
 2013,danceability,0.642,0.6355
-2013,loudness,0.0909,0.0993
+2013,loudness,0.5342,0.524
 2013,liveness,0.133,0.2063
 2013,valence,0.451,0.4685
 2013,energy,0.783,0.7492
@@ -73,7 +73,7 @@ track_album_release_year,feature,median,mean
 2013,speechiness,0.0569,0.0954
 2011,tempo,0.5094,0.5047
 2011,danceability,0.648,0.6286
-2011,loudness,0.0969,0.1081
+2011,loudness,0.5123,0.4992
 2011,liveness,0.131,0.2068
 2011,valence,0.5585,0.5488
 2011,energy,0.7565,0.7246
@@ -82,7 +82,7 @@ track_album_release_year,feature,median,mean
 2011,speechiness,0.0595,0.1078
 2010,tempo,0.5013,0.513
 2010,danceability,0.656,0.632
-2010,loudness,0.0976,0.1101
+2010,loudness,0.5099,0.4902
 2010,liveness,0.128,0.1941
 2010,valence,0.599,0.5962
 2010,energy,0.763,0.7335
@@ -91,7 +91,7 @@ track_album_release_year,feature,median,mean
 2010,speechiness,0.0528,0.0926
 2008,tempo,0.5303,0.5225
 2008,danceability,0.657,0.6245
-2008,loudness,0.104,0.1145
+2008,loudness,0.4878,0.4767
 2008,liveness,0.146,0.1967
 2008,valence,0.616,0.6165
 2008,energy,0.741,0.7203
@@ -100,7 +100,7 @@ track_album_release_year,feature,median,mean
 2008,speechiness,0.0588,0.0962
 2020,tempo,0.5053,0.5053
 2020,danceability,0.694,0.6728
-2020,loudness,0.1065,0.1144
+2020,loudness,0.4792,0.4776
 2020,liveness,0.124,0.1891
 2020,valence,0.464,0.4778
 2020,energy,0.692,0.6703
@@ -109,7 +109,7 @@ track_album_release_year,feature,median,mean
 2020,speechiness,0.0706,0.1158
 2007,tempo,0.5009,0.4994
 2007,danceability,0.67,0.6568
-2007,loudness,0.1049,0.1111
+2007,loudness,0.4845,0.4812
 2007,liveness,0.1435,0.1982
 2007,valence,0.6325,0.6156
 2007,energy,0.7435,0.7205
@@ -118,7 +118,7 @@ track_album_release_year,feature,median,mean
 2007,speechiness,0.0599,0.1084
 1998,tempo,0.4395,0.4808
 1998,danceability,0.725,0.7009
-1998,loudness,0.1278,0.1288
+1998,loudness,0.4131,0.4252
 1998,liveness,0.136,0.1936
 1998,valence,0.613,0.6105
 1998,energy,0.697,0.6798
@@ -127,7 +127,7 @@ track_album_release_year,feature,median,mean
 1998,speechiness,0.0885,0.149
 1996,tempo,0.4291,0.472
 1996,danceability,0.741,0.7045
-1996,loudness,0.1259,0.1306
+1996,loudness,0.4185,0.4243
 1996,liveness,0.131,0.1987
 1996,valence,0.619,0.622
 1996,energy,0.641,0.648
@@ -136,7 +136,7 @@ track_album_release_year,feature,median,mean
 1996,speechiness,0.0814,0.1441
 1999,tempo,0.4344,0.4881
 1999,danceability,0.704,0.6653
-1999,loudness,0.116,0.1184
+1999,loudness,0.4485,0.4617
 1999,liveness,0.138,0.2154
 1999,valence,0.653,0.6196
 1999,energy,0.721,0.7016
@@ -145,7 +145,7 @@ track_album_release_year,feature,median,mean
 1999,speechiness,0.11,0.1472
 2009,tempo,0.5085,0.5078
 2009,danceability,0.6515,0.6407
-2009,loudness,0.0999,0.1088
+2009,loudness,0.5017,0.4927
 2009,liveness,0.1415,0.2152
 2009,valence,0.617,0.5933
 2009,energy,0.775,0.7428
@@ -154,7 +154,7 @@ track_album_release_year,feature,median,mean
 2009,speechiness,0.0539,0.0923
 1993,tempo,0.4295,0.4823
 1993,danceability,0.689,0.6667
-1993,loudness,0.1603,0.1561
+1993,loudness,0.3291,0.3636
 1993,liveness,0.13,0.2096
 1993,valence,0.595,0.5824
 1993,energy,0.668,0.6597
@@ -163,7 +163,7 @@ track_album_release_year,feature,median,mean
 1993,speechiness,0.064,0.1298
 1995,tempo,0.4327,0.4745
 1995,danceability,0.703,0.6603
-1995,loudness,0.1363,0.1395
+1995,loudness,0.3892,0.3995
 1995,liveness,0.134,0.1987
 1995,valence,0.618,0.5802
 1995,energy,0.654,0.6492
@@ -172,7 +172,7 @@ track_album_release_year,feature,median,mean
 1995,speechiness,0.0638,0.1321
 1991,tempo,0.4766,0.4935
 1991,danceability,0.671,0.6436
-1991,loudness,0.1624,0.1669
+1991,loudness,0.3241,0.3371
 1991,liveness,0.1295,0.1769
 1991,valence,0.626,0.5903
 1991,energy,0.68,0.6724
@@ -181,7 +181,7 @@ track_album_release_year,feature,median,mean
 1991,speechiness,0.0521,0.0835
 2000,tempo,0.4508,0.4801
 2000,danceability,0.7135,0.6797
-2000,loudness,0.112,0.1207
+2000,loudness,0.4611,0.4529
 2000,liveness,0.1385,0.2095
 2000,valence,0.6385,0.6245
 2000,energy,0.7055,0.6903
@@ -190,7 +190,7 @@ track_album_release_year,feature,median,mean
 2000,speechiness,0.0725,0.135
 1994,tempo,0.4371,0.4892
 1994,danceability,0.69,0.6545
-1994,loudness,0.1391,0.1452
+1994,loudness,0.3816,0.3884
 1994,liveness,0.139,0.1966
 1994,valence,0.593,0.5653
 1994,energy,0.66,0.6553
@@ -199,7 +199,7 @@ track_album_release_year,feature,median,mean
 1994,speechiness,0.0577,0.1274
 1992,tempo,0.4472,0.4939
 1992,danceability,0.705,0.684
-1992,loudness,0.1629,0.1631
+1992,loudness,0.323,0.3376
 1992,liveness,0.1225,0.1784
 1992,valence,0.64,0.6341
 1992,energy,0.704,0.6686
@@ -208,7 +208,7 @@ track_album_release_year,feature,median,mean
 1992,speechiness,0.056,0.1077
 1997,tempo,0.4557,0.4873
 1997,danceability,0.6565,0.6347
-1997,loudness,0.1256,0.1352
+1997,loudness,0.4193,0.4135
 1997,liveness,0.1805,0.2901
 1997,valence,0.548,0.5451
 1997,energy,0.668,0.6517
@@ -217,7 +217,7 @@ track_album_release_year,feature,median,mean
 1997,speechiness,0.0498,0.1086
 2001,tempo,0.4669,0.4901
 2001,danceability,0.6775,0.6582
-2001,loudness,0.1042,0.1084
+2001,loudness,0.4869,0.4889
 2001,liveness,0.138,0.1981
 2001,valence,0.6225,0.5977
 2001,energy,0.728,0.7076
@@ -226,7 +226,7 @@ track_album_release_year,feature,median,mean
 2001,speechiness,0.06,0.1111
 2006,tempo,0.5011,0.5106
 2006,danceability,0.657,0.6348
-2006,loudness,0.0981,0.1051
+2006,loudness,0.5081,0.4997
 2006,liveness,0.1245,0.1971
 2006,valence,0.601,0.584
 2006,energy,0.7485,0.7173
@@ -235,7 +235,7 @@ track_album_release_year,feature,median,mean
 2006,speechiness,0.0594,0.1055
 2002,tempo,0.4674,0.4861
 2002,danceability,0.659,0.6406
-2002,loudness,0.1004,0.1099
+2002,loudness,0.4999,0.4896
 2002,liveness,0.146,0.2014
 2002,valence,0.584,0.5622
 2002,energy,0.678,0.6793
@@ -244,7 +244,7 @@ track_album_release_year,feature,median,mean
 2002,speechiness,0.0741,0.1232
 2003,tempo,0.4259,0.479
 2003,danceability,0.6995,0.6644
-2003,loudness,0.1024,0.1082
+2003,loudness,0.493,0.4974
 2003,liveness,0.1265,0.1811
 2003,valence,0.661,0.6191
 2003,energy,0.732,0.7046
@@ -253,7 +253,7 @@ track_album_release_year,feature,median,mean
 2003,speechiness,0.08,0.1451
 2005,tempo,0.4866,0.5032
 2005,danceability,0.629,0.6196
-2005,loudness,0.1056,0.1128
+2005,loudness,0.4822,0.4779
 2005,liveness,0.161,0.2424
 2005,valence,0.604,0.5873
 2005,energy,0.741,0.7217
@@ -262,7 +262,7 @@ track_album_release_year,feature,median,mean
 2005,speechiness,0.0744,0.1261
 1990,tempo,0.4718,0.4992
 1990,danceability,0.66,0.651
-1990,loudness,0.1673,0.1656
+1990,loudness,0.3133,0.3424
 1990,liveness,0.12,0.155
 1990,valence,0.657,0.6165
 1990,energy,0.693,0.6775
@@ -271,7 +271,7 @@ track_album_release_year,feature,median,mean
 1990,speechiness,0.0455,0.0783
 2004,tempo,0.4339,0.4798
 2004,danceability,0.687,0.671
-2004,loudness,0.1056,0.111
+2004,loudness,0.4824,0.4845
 2004,liveness,0.13,0.1902
 2004,valence,0.617,0.5892
 2004,energy,0.739,0.7078
@@ -280,7 +280,7 @@ track_album_release_year,feature,median,mean
 2004,speechiness,0.0929,0.1338
 1988,tempo,0.4889,0.4909
 1988,danceability,0.677,0.6758
-1988,loudness,0.1808,0.1768
+1988,loudness,0.285,0.3215
 1988,liveness,0.13,0.1676
 1988,valence,0.669,0.6403
 1988,energy,0.681,0.6566
@@ -289,7 +289,7 @@ track_album_release_year,feature,median,mean
 1988,speechiness,0.0444,0.0807
 1984,tempo,0.5202,0.5185
 1984,danceability,0.5955,0.5926
-1984,loudness,0.1202,0.1436
+1984,loudness,0.4354,0.3992
 1984,liveness,0.136,0.1951
 1984,valence,0.6755,0.6237
 1984,energy,0.766,0.7155
@@ -298,7 +298,7 @@ track_album_release_year,feature,median,mean
 1984,speechiness,0.0368,0.0454
 1982,tempo,0.4888,0.4906
 1982,danceability,0.697,0.6543
-1982,loudness,0.1384,0.1445
+1982,loudness,0.3836,0.3945
 1982,liveness,0.127,0.1761
 1982,valence,0.625,0.6255
 1982,energy,0.627,0.6497
@@ -307,7 +307,7 @@ track_album_release_year,feature,median,mean
 1982,speechiness,0.0403,0.0578
 1973,tempo,0.5352,0.5071
 1973,danceability,0.504,0.4962
-1973,loudness,0.1557,0.16
+1973,loudness,0.3397,0.3417
 1973,liveness,0.147,0.2112
 1973,valence,0.602,0.5914
 1973,energy,0.673,0.654
@@ -316,7 +316,7 @@ track_album_release_year,feature,median,mean
 1973,speechiness,0.0409,0.0621
 1979,tempo,0.5076,0.5062
 1979,danceability,0.5825,0.5777
-1979,loudness,0.1392,0.1542
+1979,loudness,0.3815,0.3685
 1979,liveness,0.0975,0.1408
 1979,valence,0.719,0.6446
 1979,energy,0.706,0.6748
@@ -325,7 +325,7 @@ track_album_release_year,feature,median,mean
 1979,speechiness,0.042,0.0484
 1977,tempo,0.5226,0.5305
 1977,danceability,0.5455,0.5342
-1977,loudness,0.1403,0.151
+1977,loudness,0.3786,0.3726
 1977,liveness,0.141,0.2222
 1977,valence,0.5395,0.57
 1977,energy,0.694,0.6508
@@ -334,7 +334,7 @@ track_album_release_year,feature,median,mean
 1977,speechiness,0.037,0.0536
 1981,tempo,0.5278,0.5303
 1981,danceability,0.579,0.5697
-1981,loudness,0.1481,0.1478
+1981,loudness,0.3583,0.3831
 1981,liveness,0.139,0.1919
 1981,valence,0.697,0.6651
 1981,energy,0.7215,0.6968
@@ -343,7 +343,7 @@ track_album_release_year,feature,median,mean
 1981,speechiness,0.0407,0.053
 1974,tempo,0.5032,0.5057
 1974,danceability,0.5305,0.5188
-1974,loudness,0.165,0.1684
+1974,loudness,0.3182,0.3315
 1974,liveness,0.125,0.2001
 1974,valence,0.629,0.6148
 1974,energy,0.637,0.6244
@@ -352,7 +352,7 @@ track_album_release_year,feature,median,mean
 1974,speechiness,0.0429,0.063
 1970,tempo,0.5106,0.5108
 1970,danceability,0.5345,0.5313
-1970,loudness,0.1677,0.1689
+1970,loudness,0.3124,0.3295
 1970,liveness,0.1375,0.1823
 1970,valence,0.594,0.6218
 1970,energy,0.629,0.596
@@ -361,7 +361,7 @@ track_album_release_year,feature,median,mean
 1970,speechiness,0.0343,0.0523
 1976,tempo,0.5129,0.5265
 1976,danceability,0.55,0.5422
-1976,loudness,0.1478,0.1549
+1976,loudness,0.3591,0.3641
 1976,liveness,0.126,0.1907
 1976,valence,0.64,0.6115
 1976,energy,0.657,0.6281
@@ -370,7 +370,7 @@ track_album_release_year,feature,median,mean
 1976,speechiness,0.0405,0.0551
 1987,tempo,0.5006,0.5106
 1987,danceability,0.6045,0.604
-1987,loudness,0.1572,0.1647
+1987,loudness,0.3362,0.3529
 1987,liveness,0.133,0.1875
 1987,valence,0.653,0.6298
 1987,energy,0.784,0.7254
@@ -379,7 +379,7 @@ track_album_release_year,feature,median,mean
 1987,speechiness,0.0426,0.0635
 1978,tempo,0.505,0.5075
 1978,danceability,0.5775,0.5822
-1978,loudness,0.1433,0.1496
+1978,loudness,0.3707,0.3796
 1978,liveness,0.127,0.2
 1978,valence,0.667,0.6389
 1978,energy,0.685,0.666
@@ -388,7 +388,7 @@ track_album_release_year,feature,median,mean
 1978,speechiness,0.0414,0.0605
 1969,tempo,0.4902,0.4906
 1969,danceability,0.525,0.5248
-1969,loudness,0.1554,0.1621
+1969,loudness,0.3404,0.3451
 1969,liveness,0.134,0.176
 1969,valence,0.6475,0.6135
 1969,energy,0.638,0.6196
@@ -397,7 +397,7 @@ track_album_release_year,feature,median,mean
 1969,speechiness,0.0389,0.0645
 1986,tempo,0.494,0.4926
 1986,danceability,0.625,0.6227
-1986,loudness,0.1768,0.1717
+1986,loudness,0.293,0.3286
 1986,liveness,0.129,0.1585
 1986,valence,0.72,0.6616
 1986,energy,0.715,0.6574
@@ -406,7 +406,7 @@ track_album_release_year,feature,median,mean
 1986,speechiness,0.0369,0.0472
 1980,tempo,0.5321,0.5219
 1980,danceability,0.559,0.5656
-1980,loudness,0.1257,0.1421
+1980,loudness,0.4191,0.3988
 1980,liveness,0.118,0.1938
 1980,valence,0.646,0.6339
 1980,energy,0.723,0.7065
@@ -415,7 +415,7 @@ track_album_release_year,feature,median,mean
 1980,speechiness,0.0471,0.0606
 1983,tempo,0.518,0.5154
 1983,danceability,0.626,0.6047
-1983,loudness,0.1275,0.1456
+1983,loudness,0.414,0.3955
 1983,liveness,0.142,0.19
 1983,valence,0.636,0.6314
 1983,energy,0.778,0.7301
@@ -424,7 +424,7 @@ track_album_release_year,feature,median,mean
 1983,speechiness,0.0382,0.0529
 1985,tempo,0.5075,0.5092
 1985,danceability,0.625,0.6134
-1985,loudness,0.1491,0.1619
+1985,loudness,0.3559,0.355
 1985,liveness,0.1085,0.167
 1985,valence,0.6445,0.6191
 1985,energy,0.675,0.6565
@@ -433,7 +433,7 @@ track_album_release_year,feature,median,mean
 1985,speechiness,0.0364,0.0447
 1989,tempo,0.4812,0.5046
 1989,danceability,0.673,0.6447
-1989,loudness,0.1733,0.1702
+1989,loudness,0.3004,0.3328
 1989,liveness,0.13,0.1734
 1989,valence,0.672,0.656
 1989,energy,0.72,0.6996
@@ -442,7 +442,7 @@ track_album_release_year,feature,median,mean
 1989,speechiness,0.0445,0.0641
 1975,tempo,0.4962,0.5043
 1975,danceability,0.506,0.5178
-1975,loudness,0.169,0.1833
+1975,loudness,0.3096,0.3013
 1975,liveness,0.117,0.2107
 1975,valence,0.586,0.5567
 1975,energy,0.586,0.5652
@@ -451,7 +451,7 @@ track_album_release_year,feature,median,mean
 1975,speechiness,0.0418,0.0478
 1968,tempo,0.473,0.4926
 1968,danceability,0.468,0.4812
-1968,loudness,0.1867,0.1869
+1968,loudness,0.2733,0.2858
 1968,liveness,0.169,0.211
 1968,valence,0.566,0.6297
 1968,energy,0.59,0.5985
@@ -460,7 +460,7 @@ track_album_release_year,feature,median,mean
 1968,speechiness,0.0407,0.0561
 1971,tempo,0.5291,0.4985
 1971,danceability,0.489,0.5085
-1971,loudness,0.1694,0.175
+1971,loudness,0.3087,0.3185
 1971,liveness,0.1255,0.1906
 1971,valence,0.5265,0.5204
 1971,energy,0.6215,0.6029
@@ -469,7 +469,7 @@ track_album_release_year,feature,median,mean
 1971,speechiness,0.0392,0.0472
 1967,tempo,0.4896,0.4873
 1967,danceability,0.499,0.4794
-1967,loudness,0.1627,0.1631
+1967,loudness,0.3234,0.3434
 1967,liveness,0.1405,0.2088
 1967,valence,0.574,0.5468
 1967,energy,0.479,0.5426
@@ -478,7 +478,7 @@ track_album_release_year,feature,median,mean
 1967,speechiness,0.0373,0.0404
 1972,tempo,0.5053,0.514
 1972,danceability,0.575,0.5574
-1972,loudness,0.1699,0.1814
+1972,loudness,0.3075,0.3051
 1972,liveness,0.122,0.1932
 1972,valence,0.718,0.6522
 1972,energy,0.5835,0.594
@@ -487,7 +487,7 @@ track_album_release_year,feature,median,mean
 1972,speechiness,0.0351,0.0461
 1966,tempo,0.52,0.5403
 1966,danceability,0.505,0.4949
-1966,loudness,0.1429,0.1647
+1966,loudness,0.3717,0.3428
 1966,liveness,0.137,0.2378
 1966,valence,0.693,0.6166
 1966,energy,0.629,0.6361
@@ -496,7 +496,7 @@ track_album_release_year,feature,median,mean
 1966,speechiness,0.0565,0.0587
 1965,tempo,0.4958,0.5116
 1965,danceability,0.532,0.5445
-1965,loudness,0.138,0.148
+1965,loudness,0.3846,0.369
 1965,liveness,0.1205,0.1343
 1965,valence,0.6975,0.6643
 1965,energy,0.752,0.6717
@@ -505,7 +505,7 @@ track_album_release_year,feature,median,mean
 1965,speechiness,0.0414,0.0471
 1964,tempo,0.5716,0.5306
 1964,danceability,0.57,0.5818
-1964,loudness,0.1188,0.1242
+1964,loudness,0.4413,0.4485
 1964,liveness,0.1035,0.1463
 1964,valence,0.727,0.7123
 1964,energy,0.749,0.6618
@@ -514,7 +514,7 @@ track_album_release_year,feature,median,mean
 1964,speechiness,0.059,0.0594
 1963,tempo,0.5918,0.6024
 1963,danceability,0.491,0.4778
-1963,loudness,0.1639,0.1972
+1963,loudness,0.3208,0.288
 1963,liveness,0.0691,0.0821
 1963,valence,0.494,0.6218
 1963,energy,0.76,0.5622
@@ -523,7 +523,7 @@ track_album_release_year,feature,median,mean
 1963,speechiness,0.0394,0.0403
 1962,tempo,0.5715,0.5715
 1962,danceability,0.816,0.816
-1962,loudness,0.1457,0.1457
+1962,loudness,0.3645,0.3645
 1962,liveness,0.0899,0.0899
 1962,valence,0.912,0.912
 1962,energy,0.514,0.514
@@ -532,7 +532,7 @@ track_album_release_year,feature,median,mean
 1962,speechiness,0.0339,0.0339
 1957,tempo,0.696,0.696
 1957,danceability,0.5195,0.5195
-1957,loudness,0.0667,0.0667
+1957,loudness,0.6368,0.6368
 1957,liveness,0.07,0.07
 1957,valence,0.9115,0.9115
 1957,energy,0.78,0.78
@@ -541,7 +541,7 @@ track_album_release_year,feature,median,mean
 1957,speechiness,0.0806,0.0806
 1958,tempo,0.6991,0.6991
 1958,danceability,0.647,0.647
-1958,loudness,0.159,0.159
+1958,loudness,0.3321,0.3321
 1958,liveness,0.0715,0.0715
 1958,valence,0.915,0.915
 1958,energy,0.582,0.582
@@ -550,7 +550,7 @@ track_album_release_year,feature,median,mean
 1958,speechiness,0.0755,0.0755
 1961,tempo,0.6316,0.6316
 1961,danceability,0.585,0.585
-1961,loudness,0.2358,0.2358
+1961,loudness,0.1934,0.1934
 1961,liveness,0.0908,0.0908
 1961,valence,0.433,0.433
 1961,energy,0.036,0.036
@@ -559,7 +559,7 @@ track_album_release_year,feature,median,mean
 1961,speechiness,0.0418,0.0418
 1960,tempo,0.535,0.5875
 1960,danceability,0.524,0.46
-1960,loudness,0.1648,0.1454
+1960,loudness,0.3187,0.3729
 1960,liveness,0.316,0.4393
 1960,valence,0.876,0.6917
 1960,energy,0.543,0.523

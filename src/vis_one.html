@@ -21,90 +21,88 @@
 <br/><br/>
 
 <div id="answer" style="background-color: #121212;width: 90%;color: #ffffff;">
-    <label for="option">Use Median: </label>
-    <input type="checkbox" id="option" name="avg_option" value="Use Median" onclick="visualize()">
+    <label for="option">Use Mean: </label>
+    <input type="checkbox" id="option" name="avg_option" value="Use Mean" onclick="visualize()">
     <hr style="color: white">
 
     <u><b>Question: </b></u>
     <p>How have the features that make up the music we listen to changed over the years?</p>
     <u><b>Description: </b></u>
-    <p>The line chart above shows how each of the features, "acousticness", "danceability", "energy", "liveness" and
-        "valence" have changed over the past few decades.
-        These features are all given a score between 0.0 and 1.0. For example, a danceability score of 0.9 indicates
-        that
-        the song is very suitable for dancing.
+    <p>The line charts above shows how each of the musical features which are present in the dataset have changed over
+        the past few decades. Each of the features is grouped by year and then aggregated using either the median or
+        mean, there is a checkbox below the graph which can be used to switch between them.
     </p>
     <p>
-        Hovering the cursor over any of the lines will highlight that line and grey out the others to enable the ability
-        to
-        focus in on any particular feature. Hovering over a data point in any of the lines will show its value at that
-        point.
+        Each of the features used either were already ranging from 0 to 1 or were normalized to be between 0 and 1. The
+        features value is used to indicate how much of that feature is present in the song. For example, a high value
+        for danceability indicates that the song is suitable for dancing.
     </p>
-
+    <p>
+        There is also a tooltip which can be used to get an exact value for a given year. This is shown by hovering over
+        a point on the chart.
+    </p>
     <hr style="color: white">
 
     <u><b>Insight: </b></u>
-    <p>There are several interesting trends which have emerged in the musical features given over the past few decades
-        : </p>
-    <ol>
-        <li>
-            The most interesting and worrying trend in musical features is that of "valence". Valence is the perceived
-            positvity of a track, higher meaning more positive and lower meaning more negative. Valence starts off
-            relatively high,
-            but sees a significant drop between the end of the 1960s and the start of the 1970s. This could be a sample
-            size issue with the dataset or it could be a reflection of some real world events that were happening at the
-            time.
-            Both the cold war and the Vietnam War were close to their peaks in this span of time. Valence then sees an
-            increase then for a couple of decades but it does ultimately start to trend downwards with a sizable drop
-            starting in 2010.
-            Considering that the dataset has a lot more samples for more recent years I wouldn't put this drop down to
-            the data being used.
-            Instead I would suggest that it is the result of significant real world events.
-            2007/2008 marked the start of the Global Recession, with many austerity measures being introduced in the
-            following years,
-            austerity is known to have a significant impact on the mental well-being and happiness of people. This
-            austerity lasted for years and during it and in the years that followed there was many global events, a lot
-            of which were negative.
-            There was several disasters such as the earthquake in Haiti, the tsunami off the coast of Japan which caused
-            the Fukushima nuclear plant disaster and global problems such as climate change took the spotlight. Music
-            and Art tends to reflect real life and this is a more worrying reflection than most.
-        </li>
-        <li>
-            "Danceability" sees steady growth throughout the decades, this is more than likely caused by the emergence
-            of new types of music, such as EDM and Techno, genres which are designed to have people dancing. These
-            genres have only become more popular since they started and took off in the 1980s.
-        </li>
-        <li>
-            "Energy", the perceived measure of intensity and activity fluctuates at different points throughout the
-            decades,
-            this is more than likely due to the changing tastes in music throughout the time period. It sees peaks
-            during the
-            80s, when the likes of The Police, U2 and Van Halen were all producing music, and also during the 2010s,
-            when
-            EDM and Hip-Hop were growing and becoming more popular.
-        </li>
+    <p>
+        It's clear that the features that are present in the music we listen to have changed over the past few decades.
+        Some musical features have become more prevalent in music such as danceability, a measure of how good a song is
+        for dancing, and energy, the perceived energy of a song and how active it is. Others have either remained the
+        same, while some are worryingly in decline.
+    </p>
 
-        <li>"Acousticness" had its peak back in the 1960s / 1970s and since the end of the 1970s has been relatively
-            stable up until the 2020. "Acousticness" does see a rise again in the mid 1980s, country music did make a
-            small
-            revival during the 80s with hits from the likes of Dolly Parton and others working in the genre being
-            released.
-        </li>
-        <li>
-            "Liveness" remains stable throughout the decades, while artists have published live versions of their music
-            on Spotify, the trend line matches the data available to the visualization. Upon inspection of the data set,
-            I noticed only one entry had any indication of it being a live version, live versions often have live in the
-            title.
-            This stable value for "liveness" matches the entries in the dataset, which is a small subset, less than
-            32,00 after filtering, of the full music
-            catalogue available on Spotify, which is approximately 70 million songs, <a
-                href="https://newsroom.spotify.com/company-info/#:~:text=Discover%2C%20manage%20and%20share%20over,and%20ad%2Dfree%20listening%20experience.">Source</a>.
-        </li>
-    </ol>
+    <p>
+        Since the 1960s there has been a slow decline in the acousticness of music. This is unsurprising due to the
+        shift in popular music since then. Country western and genres similar were more popular back then, partly because
+        the genres that we listen to now were in their infancy or weren't even around. So it follows, that unless more
+        modern genres used acoustic instruments (which they haven't), this feature would become less prevalent over
+        the years. However it does has had some increases along the way and it does appear to be on the rise again. I
+        think the early rise of acoustiness in the mid eighties can be put down to a resurgance in acoustic genres caused
+        artists such as Dolly Parton. Then in more recent years acousticness seems to be becoming more prevalent in songs
+        again. There have been some popular musicians(Ed Sheeran, Taylor Swift) who made heavy use of acoustic
+        instruments in their careers, so this could have influenced to an uptake in acousticness in modern music.
+    </p>
+    <p>
+        Danceability, energy and loudness are the three features that have shown moderate growth since the 1960s, this
+        isn't all that surprising. The three of them see their rise start in the late eighties, which lines up with
+        newer genres such as EDM and it's numerous sub-genres starting, as well as a lot of music in both R&B and Rap,
+        which were also starting to gain popularity in those years. I did think though that loudness would have been
+        more of a factor in the 1970s as Rock and Heavy Metal were quite popular at the time. This however, could be more
+        of a fault with the dataset and not having a wide enough sample to catch all music from the period. It is a
+        very small subset, ~32,000, of the full Spotify which is ~70 million songs.
+    </p>
+    <p>
+        Instrumentalness, liveness, speechiness and tempo have all remained moderately stagnant. Tempo has been up and
+        down slightly over the years, and speechiness has seen small small increase. This increase does line up with the
+        likes of Rap starting around the 1990s. Instrumentalness seems to be completely unused, but when you switch to
+        using the mean as the method of aggregation we are reminded that there is still some music using a lot of
+        instrumental sections and almost no lyrics. This is something that is covered a bit more in the final visualization.
+    </p>
+    <p>
+        The most worrying trend is that of valence. Valence is the perceived positivity of a track, songs with values
+        closer to one are more positive and those closer to 0 more negative. It has been up and down over the years,
+        which is as expected, an artists' mood, which is heavily influenced by external factors
+        such as war, recession, etc., can change regularly and this can be a major influence on their music. More
+        worryingly though is the trend in the past decade. Since 2010, valence has decline, it has recovered slightly
+        but it is noticeably down compared to previous decades. This trend can, I think, be easily explained. 2010 was
+        just after the start of the global recession that impacted a massive number of lives around the world. There
+        as massive unemployment and a lot of people were living close to or below the poverty line. The small increase
+        can then be explained by the small increase in the year 2015, which was around the time many would say the world
+        was well on it's way to recovering. This isn't without it's problems though, in the past five years there has
+        been a huge increase in devastating, worldwide events. Climate change has become far more prevalent and there
+        has been a big increase in the number of natural weather disasters. Terrorism has also been a regular headline
+        around the world. I think when these factors are taken into account it's pretty clear why music has seen a drop
+        in positivity.
+    </p>
 
     <hr style="color: white">
 
     <u><b>Design Considerations: </b></u>
+    <p>
+        The target audience for this chart is the same as it is for all three visualizations, and that is those from who
+        are more interested in music than your average person and also those with some background in data analysis such
+        that they already have even a mild understanding of interpreting charts and concepts such as correlations etc.
+    </p>
     <p>
         I used a small multiples version of a line chart to present the trend of the music features over time. Small
         multiples
@@ -211,10 +209,15 @@
         cause issues during visualization if they were left in. Then I noticed that there was a significant amount of
         duplicates entries in the dataset. These were rows which had the same track_name/artist and feature values, but
         differed on the playlist_genre. There wasn't much that could be done about this. The dataset lacks the actual
-        genre of a given track and instead uses whatever genre the playlist it was placed in is. Luckily, this doesn't
-        effect this visualization and the final visualization as the repeated entries don't distort the mean since they
-        have the exact same values. It does matter though for the second visualization and I will discuss it more in the
-        Data Filtering/Aggregation/Transformations section of that question.
+        genre of a given track and instead uses whatever genre the playlist it was placed in is. To handle this,
+        for the first and final visualization, all but one of these duplicates are removed, while the second one
+        removes all duplicates as it deals specifically with the genres present in the dataset. More on this in
+        this section of the second chart.
+    </p>
+    <p>
+        All but one duplicate was left for this chart as it was important to not filter out data unnecessarily. All
+        the duplicates have the same feature values so it is still accurate to take just one of these rows as there
+        is no dependence on the playlist_genre field.
     </p>
     <p>
         Once the preprocessing was done I needed to normalize two of musical features so that they would have values
@@ -233,7 +236,7 @@
         The CSV file used for this chart is a modified subset of the original data. The year was extracted from the
         "track_album_release_date" field, this was to simplify grouping. Then each column for the musical features,
         the median and mean was calculated resulting in the final structure of the new CSV as [Year, Feature, Median,
-        Mean]. The new CSV is available on my<a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a>
+        Mean]. The new CSV is available on my <a href="https://github.com/JackGeraghty/Info_Vis">GitHub Project</a>
         for this assignment, under data/question1.csv.
     </p>
 
@@ -254,7 +257,7 @@
     function visualize() {
         let w = Math.floor(window.innerWidth * 0.275);
         let h = Math.floor(window.innerHeight * 0.15);
-        const averageToUse = document.getElementById("option").checked ? "median" : "mean";
+        const averageToUse = document.getElementById("option").checked ?  "mean" : "median";
         const capitalizedAvgToUse = averageToUse.charAt(0).toUpperCase() + averageToUse.slice(1);
         const data = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
